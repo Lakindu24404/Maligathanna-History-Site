@@ -33,8 +33,78 @@ const translations = {
     nav_location: 'පිහිටීම',
     nav_architecture: 'ගෘහ නිර්මාණ',
     nav_gallery: 'ඡායාරූප',
+    nav_nearby: 'අවට ස්ථාන',
     nav_preservation: 'සංරක්ෂණය',
     nav_change_lang: 'භාෂාව මාරු කරන්න',
+    nav_help: 'උපකාර',
+    nav_help_short: 'උපකාර',
+
+    /* Help Modal */
+    help_badge: 'වෙබ් අඩවි මාර්ගෝපදේශය',
+    help_title: 'මාලිගාතැන්න වෙබ් අඩවිය භාවිතා කරන ආකාරය',
+    help_subtitle: 'මාලිගාතැන්න පුරාවිද්‍යා ස්ථානයේ තොරතුරු, සිතියම් සහ ඡායාරූප පහසුවෙන් ගවේෂණය කිරීමට මඟපෙන්වීම.',
+    help_tip_title: 'ප්‍රයෝජනවත් උපදෙසක්:',
+    help_tip_desc: 'ඔබට ඕනෑම වේලාවක ඉහළ මෙනුවෙන් භාෂාව (සිංහල / English / தமிழ்) හෝ තේමාව (Dark/Light) මාරු කර ගත හැක.',
+    help_btn_close: 'තේරුම් ගත්තා · අඩවියට පිවිසෙන්න',
+    help_card1_title: '1. භාෂාව තෝරාගැනීම (සිංහල, English, தமிழ்)',
+    help_card1_desc: 'වෙබ් අඩවියේ ඉහළ දකුණු කෙළවරේ ඇති <strong>භාෂා බොත්තම</strong> මඟින් හෝ පහළ dock මෙනුවෙන් ඔබට කැමති භාෂාව තෝරා ගත හැක. සියලුම ඓතිහාසික විස්තර භාෂා 3න්ම ලබා ගත හැක.',
+    help_card2_title: '2. පිහිටීම සහ ගමන් මාර්ගය (GPS & Maps)',
+    help_card2_desc: '<strong>\'පිහිටීම\'</strong> කොටසේදී කුරුණෑගල සිට මාලිගාතැන්නට ළඟා වන සම්පූර්ණ කිලෝමීටර් මට්ටමේ ගමන් විස්තරය සහ Google Maps සජීවී සිතියම ලබා ගත හැක.',
+    help_card3_title: '3. පුරාවිද්‍යා නටබුන් සහ ගෘහ නිර්මාණ ශිල්පය',
+    help_card3_desc: 'අනුරාධපුර යුගයේ <strong>පඨානඝර</strong> (ද්විමාලිගා භාවනා ගොඩනැගිලි) සහ <strong>චංකමනාඝර</strong> (සක්මන් මළු) වල සවිස්තර සැලසුම් සහ වාස්තු විද්‍යාත්මක ලක්ෂණ කියවන්න.',
+    help_card4_title: '4. අධි විභේදන ඡායාරූප සහ විශාලනය',
+    help_card4_desc: 'ගුවන් දසුන්, ගල් කැටයම්, සහ පරිසරය අනුව ඡායාරූප පෙරහන් (Filter) කරන්න. ඕනෑම ඡායාරූපයක් මත ක්ලික් කර පූර්ණ තිර විශාලනයෙන් සවිස්තරාත්මකව නරඹන්න.',
+    help_card5_title: '5. අවට නැරඹිය හැකි ඓතිහාසික ස්ථාන',
+    help_card5_desc: 'මාලිගාතැන්න අවට පිහිටි <strong>රැස්වෙහෙර, යාපහුව, අරංකැලේ, හත්ථිකුච්චි, රිදී විහාරය සහ ඇතුගල</strong> වැනි ඓතිහාසික ස්ථානවල දුර ප්‍රමාණයන් හා තොරතුරු ගවේෂණය කරන්න.',
+    help_card6_title: '6. රාත්‍රී/දිවා තේමාව සහ ජංගම දුරකථන පහසුව',
+    help_card6_desc: 'ඇස්වලට පහසු <strong>අඳුරු තේමාව (Dark Mode)</strong> මාරු කර ගත හැක. ජංගම දුරකථන භාවිතයේදී පහළින් දිස්වන floating dock මඟින් ක්ෂණිකව ඕනෑම කොටසකට පිවිසිය හැක.',
+
+    /* Nearby Section */
+    nearby_tag: 'සංචාරක සහ ඓතිහාසික මඟපෙන්වීම',
+    nearby_title: 'මාලිගාතැන්න අවට නැරඹිය හැකි ස්ථාන',
+    nearby_desc: 'කුරුණෑගල දිස්ත්‍රික්කයේ සහ වයඹ පළාතේ මාලිගාතැන්න පුරාවිද්‍යා භූමියට ආසන්නව පිහිටි සුවිශේෂී ඓතිහාසික ආරාම, පර්වත බලකොටු හා සංස්කෘතික උරුම ස්ථාන.',
+    nearby_view_map: 'සිතියම සහ ගමන් මඟ',
+    nb_res_title: 'රැස්වෙහෙර (ශේෂරුව) රජමහා විහාරය',
+    nb_res_dist: 'මාලිගාතැන්නේ සිට ~18 km',
+    nb_res_era: 'දේවානම්පියතිස්ස / වළගම්බා යුගය',
+    nb_res_desc: 'මීටර් 12කට ආසන්න උසකින් යුත් දැවැන්ත ශෛලමය හිටි බුදු පිළිමය, පුරාණ ලෙන් විහාර 99ක්, කටාරම් සහිත ගල් ලෙන් හා ඓතිහාසික බෝධි වෘක්ෂය පිහිටි විස්මිත ආරණ්‍යමය පුදබිමකි.',
+    nb_res_tag1: 'ශෛලමය හිටි පිළිමය',
+    nb_res_tag2: 'පුරාණ ලෙන් 99',
+
+    nb_yap_title: 'යාපහුව ඓතිහාසික රාජධානිය සහ බලකොටුව',
+    nb_yap_dist: 'මාලිගාතැන්නේ සිට ~22 km',
+    nb_yap_era: '13 වන සියවස',
+    nb_yap_desc: '13 වන සියවසේ ශ්‍රී ලංකාවේ අගනුවර සහ දළදා මාලිගය පිහිටි, සිංහල වාස්තු විද්‍යාවේ විශිෂ්ටතම නිර්මාණයක් වන අලංකාර ශෛලමය පියගැට පෙළ සහ සිංහ කැටයම් සහිත දැවැන්ත පර්වත බලකොටුවකි.',
+    nb_yap_tag1: 'විශිෂ්ට ගල් පියගැට',
+    nb_yap_tag2: 'පුරාවිද්‍යා කෞතුකාගාරය',
+
+    nb_ara_title: 'අරංකැලේ පුරාණ ආරණ්‍ය සේනාසනය',
+    nb_ara_dist: 'මාලිගාතැන්නේ සිට ~32 km',
+    nb_ara_era: 'ක්‍රි.ව. 6 – 10 වන සියවස්',
+    nb_ara_desc: 'ඝන වනාන්තරයක් මැද පිහිටි පුරාණ ආරණ්‍යවාසී ආරාමයක් වන අතර, දිගු ශෛලමය සක්මන් මාවත්, පුරාණ ආයුර්වේද රෝහල් නටබුන්, ශිලා ඖෂධ ඔරු හා උණුදිය ස්නානාගාර (ජන්තාඝර) මෙහි දක්නට ඇත.',
+    nb_ara_tag1: 'පුරාණ ආයුර්වේද රෝහල',
+    nb_ara_tag2: 'ශිලා සක්මන් මාවත්',
+
+    nb_hat_title: 'හත්ථිකුච්චි පුරාවිද්‍යා පරිශ්‍රය',
+    nb_hat_dist: 'මාලිගාතැන්නේ සිට ~34 km',
+    nb_hat_era: 'අනුරාධපුර යුගය',
+    nb_hat_desc: 'සිරිසඟබෝ රජු තම හිස දන් දුන් ස්ථානය ලෙස ජනප්‍රවාදගත, දැවැන්ත කළුගල් කුළුණු, අලංකාර නෙළුම් පොකුණු, වටදාගෙය සහ පර්වත ලිපි විසිරී ඇති අක්කර 300කට අධික පුරාණ ආරාම පරිශ්‍රයකි.',
+    nb_hat_tag1: 'නෙළුම් පොකුණු සහ වටදාගෙය',
+    nb_hat_tag2: 'සිරිසඟබෝ රජුගේ උරුමය',
+
+    nb_rid_title: 'රිදී විහාරය — රිදීගම',
+    nb_rid_dist: 'මාලිගාතැන්නේ සිට ~48 km',
+    nb_rid_era: 'ක්‍රි.පූ. 2 වන සියවස',
+    nb_rid_desc: 'රුවන්වැලි මහා සෑය තැනීමට රිදී නිධිය හමු වූ ඓතිහාසික පුදබිමයි. විශාල ගල් පර්වතය යට පිහිටි ලෙන් විහාර, මහනුවර යුගයේ අනර්ඝ බිතුසිතුවම්, රන් ආලේපිත බුදු පිළිමය සහ ඇත්දළ කැටයම් දොරටුවෙන් සමන්විතය.',
+    nb_rid_tag1: 'මහනුවර බිතුසිතුවම්',
+    nb_rid_tag2: 'ඇත්දළ කැටයම් උළුවස්ස',
+
+    nb_ath_title: 'ඇතුගල සහ කුරුණෑගල නගරය',
+    nb_ath_dist: 'මාලිගාතැන්නේ සිට ~28 km',
+    nb_ath_era: 'සංස්කෘතික සංකේතය',
+    nb_ath_desc: 'ඇතෙකුගේ හැඩයෙන් යුත් මීටර් 316ක දැවැන්ත කළුගල් පර්වතය මුදුනේ වැඩහිඳින අඩි 88ක දැවැන්ත සුදු සමාධි බුද්ධ ප්‍රතිමාව සහ මුළු කුරුණෑගල දිස්ත්‍රික්කයම එකවර දැකගත හැකි මනරම් පරිදර්ශක දර්ශනය.',
+    nb_ath_tag1: 'අඩි 88 සමාධි පිළිමය',
+    nb_ath_tag2: 'පරිදර්ශක නගර දසුන',
 
     /* Hero */
     hero_badge: 'ශ්‍රී ලාංකීය සංස්කෘතික උරුමය',
@@ -281,8 +351,78 @@ const translations = {
     nav_location: 'Location',
     nav_architecture: 'Architecture',
     nav_gallery: 'Gallery',
+    nav_nearby: 'Nearby Places',
     nav_preservation: 'Preservation',
     nav_change_lang: 'Change Language',
+    nav_help: 'Site Guide',
+    nav_help_short: 'Help',
+
+    /* Help Modal */
+    help_badge: 'Site User Guide',
+    help_title: 'How to Use & Explore This Heritage Site',
+    help_subtitle: 'A complete step-by-step guide to navigate features, interactive maps, multi-language controls, and archaeological highlights.',
+    help_tip_title: 'Helpful Tip:',
+    help_tip_desc: 'You can change the language (Sinhala / English / Tamil) or toggle Dark/Light theme anytime from the top bar.',
+    help_btn_close: 'Got It · Explore Site',
+    help_card1_title: '1. 3-Language Switching (Sinhala, English, Tamil)',
+    help_card1_desc: 'Click the <strong>Language toggle</strong> in the top navigation bar or mobile dock to switch effortlessly between Sinhala, English, and Tamil at any moment.',
+    help_card2_title: '2. Interactive Location & Directions (GPS & Route)',
+    help_card2_desc: 'Visit the <strong>\'Location\'</strong> section to view step-by-step driving directions from Kurunegala, distance milestones, and direct Google Maps GPS navigation.',
+    help_card3_title: '3. Archaeological Remains & Architecture',
+    help_card3_desc: 'Explore detailed architectural blueprints, double-platform layouts, and archaeological findings of the ancient <strong>Patanaghara</strong> and <strong>Chankamanaghara</strong>.',
+    help_card4_title: '4. HD Photo Gallery & Lightbox Viewer',
+    help_card4_desc: 'Filter gallery photos by Aerial, Stone, Nature, or Structures. Click any photo to open the full-screen HD Lightbox viewer with descriptive captions.',
+    help_card5_title: '5. Nearby Historical Places to Visit',
+    help_card5_desc: 'Discover top attractions near Maligathanna such as <strong>Resvehera, Yapahuwa, Arankele, Haththikuchchi, Ridi Viharaya, and Athugala</strong> with travel distances and directions.',
+    help_card6_title: '6. Dark / Light Mode & Mobile Dock',
+    help_card6_desc: 'Toggle eye-friendly <strong>Dark Mode</strong> with the Moon/Sun icon. On mobile phones, use the bottom floating dock to jump instantly between sections.',
+
+    /* Nearby Section */
+    nearby_tag: 'Regional Heritage Guide',
+    nearby_title: 'Historical & Scenic Places to Visit Nearby',
+    nearby_desc: 'Explore prominent ancient monasteries, medieval rock fortresses, and cultural landmarks located in close proximity to Maligathanna in Kurunegala District.',
+    nearby_view_map: 'Directions & Map',
+    nb_res_title: 'Resvehera (Sesuruwa) Raja Maha Viharaya',
+    nb_res_dist: '~18 km from Maligathanna',
+    nb_res_era: 'Devanampiyatissa / Valagamba Era',
+    nb_res_desc: 'An ancient forest monastery famed for its majestic 39-foot rock-carved standing Buddha statue, 99 drip-ledged meditation caves, and historic Ashta Phala Bodhi tree.',
+    nb_res_tag1: 'Rock-Carved Colossus',
+    nb_res_tag2: '99 Drip-Ledge Caves',
+
+    nb_yap_title: 'Yapahuwa Rock Fortress & Ancient Capital',
+    nb_yap_dist: '~22 km from Maligathanna',
+    nb_yap_era: '13th Century (King Buvanekabahu I)',
+    nb_yap_desc: 'The 13th-century medieval citadel and sacred capital of Sri Lanka, renowned for its dramatic ornamental granite staircase, carved stone guardian lions, and on-site museum.',
+    nb_yap_tag1: 'Granite Stairway',
+    nb_yap_tag2: 'Archaeology Museum',
+
+    nb_ara_title: 'Arankele Ancient Forest Hermitage',
+    nb_ara_dist: '~32 km from Maligathanna',
+    nb_ara_era: '6th – 10th Century CE',
+    nb_ara_desc: 'A serene 6th-century forest monastery featuring elevated stone meditation walkways, remnants of an ancient Ayurvedic hospital, stone medicinal baths, and hot-water bath houses.',
+    nb_ara_tag1: 'Ancient Ayurvedic Hospital',
+    nb_ara_tag2: 'Stone Meditation Paths',
+
+    nb_hat_title: 'Haththikuchchi Monastic Complex',
+    nb_hat_dist: '~34 km from Maligathanna',
+    nb_hat_era: '3rd Century BCE – Anuradhapura Period',
+    nb_hat_desc: 'An expansive 300-acre ancient monastery associated with the legend of King Sirisangabo, featuring stone-pillared Vatadage, picturesque rock ponds, and rock inscriptions.',
+    nb_hat_tag1: 'Lotus Ponds & Vatadage',
+    nb_hat_tag2: 'King Sirisangabo Heritage',
+
+    nb_rid_title: 'Ridi Viharaya (Silver Cave Temple)',
+    nb_rid_dist: '~48 km from Maligathanna',
+    nb_rid_era: '2nd Century BCE (King Dutugemunu)',
+    nb_rid_desc: 'Built on the site where silver was discovered to finance the Great Ruwanweli Seya. Features spectacular cave shrines beneath an imposing rock cliff, Kandyan murals, and ivory carvings.',
+    nb_rid_tag1: 'Kandyan Cave Murals',
+    nb_rid_tag2: 'Ivory Carved Doorframe',
+
+    nb_ath_title: 'Athugala Elephant Rock & Giant Buddha',
+    nb_ath_dist: '~28 km from Maligathanna',
+    nb_ath_era: 'Cultural & Natural Landmark',
+    nb_ath_desc: 'The towering 316-meter elephant-shaped granite monolith crowned with an iconic 88-foot white seated Samadhi Buddha statue offering 360-degree panoramic views of Kurunegala.',
+    nb_ath_tag1: '88-Foot Samadhi Buddha',
+    nb_ath_tag2: '360° Panoramic View',
 
     /* Hero */
     hero_badge: 'SRI LANKAN HERITAGE',
@@ -529,8 +669,78 @@ const translations = {
     nav_location: 'இடம்',
     nav_architecture: 'கட்டிடக்கலை',
     nav_gallery: 'படத்தொகுப்பு',
+    nav_nearby: 'அருகிலுள்ள இடங்கள்',
     nav_preservation: 'பாதுகாப்பு',
     nav_change_lang: 'மொழியை மாற்றுக',
+    nav_help: 'வழிகாட்டி',
+    nav_help_short: 'உதவி',
+
+    /* Help Modal */
+    help_badge: 'இணையதள வழிகாட்டி',
+    help_title: 'இந்த தளத்தை எவ்வாறு பயன்படுத்துவது',
+    help_subtitle: 'வரலாற்று அம்சங்கள், வரைபடங்கள், மொழி மாற்றம் மற்றும் தொல்பொருள் விவரங்களை ஆராய்வதற்கான வழிகாட்டி.',
+    help_tip_title: 'பயனுள்ள குறிப்பு:',
+    help_tip_desc: 'மேல் பட்டியில் இருந்து எந்த நேரத்திலும் மொழியையோ அல்லது டார்க்/லைட் தீமையோ எளிதாக மாற்றலாம்.',
+    help_btn_close: 'புரிந்தது · தளத்தை ஆராய்க',
+    help_card1_title: '1. 3 மொழி மாற்றம் (சிங்களம், ஆங்கிலம், தமிழ்)',
+    help_card1_desc: 'மேல் வழிசெலுத்தல் பட்டி அல்லது மொபைல் டாக்கில் உள்ள <strong>மொழி பொத்தானை</strong> கிளிக் செய்து சிங்களம், ஆங்கிலம் மற்றும் தமிழ் இடையே உடனடியாக மாறலாம்.',
+    help_card2_title: '2. இருப்பிடம் & வழிசெலுத்தல் (வரைபடம் & வழிகள்)',
+    help_card2_desc: '<strong>\'இருப்பிடம்\'</strong> பிரிவில் குருநாகலில் இருந்து மாளிகாதென்னவுக்கு வரும் வழிகள் மற்றும் நேரடி கூகுள் வரைபட வழிகாட்டலை பெறலாம்.',
+    help_card3_title: '3. தொல்பொருள் எச்சங்கள் & கட்டிடக்கலை',
+    help_card3_desc: 'பண்டைய <strong>பதானகார</strong> மற்றும் <strong>சங்கமனகார</strong> தியான மண்டபங்களின் விரிவான கட்டிடக்கலை மற்றும் தொல்பொருள் தகவல்களை அறியலாம்.',
+    help_card4_title: '4. HD புகைப்படங்கள் & முழுத்திரை பார்வை',
+    help_card4_desc: 'வான்வழி, பாறை, இயற்கை மற்றும் கட்டமைப்புகள் வாரியாக புகைப்படங்களை வடிகட்டவும். முழுத்திரை HD பார்வையில் காண எந்த புகைப்படத்தையும் கிளிக் செய்யவும்.',
+    help_card5_title: '5. அருகில் பார்க்கக்கூடிய வரலாற்று இடங்கள்',
+    help_card5_desc: 'மாளிகாதென்னவுக்கு அருகிலுள்ள <strong>ரஸ்வெஹெர, யாப்பகூவ, அரங்கெலே, ஹத்திகுச்சி, ரிதி விகாரை, அத்துகல</strong> போன்ற வரலாற்று இடங்களை தூரத்துடன் கண்டறியவும்.',
+    help_card6_title: '6. இரவு/பகல் தீம் & மொபைல் வசதி',
+    help_card6_desc: 'கண்களுக்கு வசதியான <strong>டார்க் மோடை</strong> மாற்றலாம். மொபைல் போன்களில் கீழேயுள்ள ஃப்ளோட்டிங் டாக் மூலம் எந்த பகுதிக்கும் உடனடியாக செல்லலாம்.',
+
+    /* Nearby Section */
+    nearby_tag: 'பிராந்திய பாரம்பரிய வழிகாட்டி',
+    nearby_title: 'அருகில் பார்க்கக்கூடிய வரலாற்று இடங்கள்',
+    nearby_desc: 'குருநாகல் மாவட்டத்தில் மாளிகாதென்ன தொல்பொருள் தளத்திற்கு அருகிலுள்ள முக்கிய பண்டைய மடாலயங்கள் மற்றும் வரலாற்று சிறப்புமிக்க இடங்களை ஆராயுங்கள்.',
+    nearby_view_map: 'வரைபடம் & வழிகள்',
+    nb_res_title: 'ரஸ்வெஹெர (சேசுருவ) ரஜ மகா விகாரை',
+    nb_res_dist: 'மாளிகாதென்னவிலிருந்து ~18 km',
+    nb_res_era: 'தேவனாம்பியதிஸ்ஸ / வலகம்பா காலம்',
+    nb_res_desc: '39 அடி உயர பிரம்மாண்டமான பாறை செதுக்கப்பட்ட நின்ற புத்தர் சிலை மற்றும் 99 குகை ஆசிரமங்களை கொண்ட புகழ்பெற்ற பண்டைய வன மடாலயம்.',
+    nb_res_tag1: 'பாறை புத்தர் சிலை',
+    nb_res_tag2: '99 குகைகள்',
+
+    nb_yap_title: 'யாப்பகூவ வரலாற்று பாறை கோட்டை',
+    nb_yap_dist: 'மாளிகாதென்னவிலிருந்து ~22 km',
+    nb_yap_era: '13 ஆம் நூற்றாண்டு',
+    nb_yap_desc: '13 ஆம் நூற்றாண்டின் புகழ்பெற்ற பாறை கோட்டை மற்றும் தலைநகரம், கம்பீரமான கிரானைட் படிக்கட்டுகள் மற்றும் செதுக்கப்பட்ட சிங்க சிற்பங்களுக்கு பெயர் பெற்றது.',
+    nb_yap_tag1: 'அழகிய படிக்கட்டுகள்',
+    nb_yap_tag2: 'தொல்பொருள் அருங்காட்சியகம்',
+
+    nb_ara_title: 'அரங்கெலே பண்டைய வன ஆசிரமம்',
+    nb_ara_dist: 'மாளிகாதென்னவிலிருந்து ~32 km',
+    nb_ara_era: 'கி.பி 6 – 10 ஆம் நூற்றாண்டு',
+    nb_ara_desc: 'அடர்ந்த காட்டின் மத்தியில் அமைந்துள்ள அமைதியான பண்டைய வன ஆசிரமம், பாறை நடைபாதைகள் மற்றும் பண்டைய ஆயுர்வேத மருத்துவமனை இடிபாடுகளை கொண்டது.',
+    nb_ara_tag1: 'ஆயுர்வேத மருத்துவமனை',
+    nb_ara_tag2: 'தியான நடைபாதைகள்',
+
+    nb_hat_title: 'ஹத்திகுச்சி தொல்பொருள் வளாகம்',
+    nb_hat_dist: 'மாளிகாதென்னவிலிருந்து ~34 km',
+    nb_hat_era: 'கி.மு 3 ஆம் நூற்றாண்டு',
+    nb_hat_desc: 'சிரிசங்கபோ மன்னரின் வரலாற்றுடன் தொடர்புடைய, அழகிய தாமரை குளங்கள், தூண்கள் மற்றும் வட்டதாகே கொண்ட 300 ஏக்கர் பரப்பளவிலான பண்டைய தளம்.',
+    nb_hat_tag1: 'தாமரை குளங்கள்',
+    nb_hat_tag2: 'மன்னர் வரலாறு',
+
+    nb_rid_title: 'ரிதி விகாரை — ரிதிகம',
+    nb_rid_dist: 'மாளிகாதென்னவிலிருந்து ~48 km',
+    nb_rid_era: 'கி.மு 2 ஆம் நூற்றாண்டு',
+    nb_rid_desc: 'ருவன்வெலிசாய கட்ட வெள்ளி கிடைத்த வரலாற்று சிறப்புமிக்க தளம். பிரம்மாண்ட பாறை குகைகள், கண்டி கால ஓவியங்கள் மற்றும் தந்த செதுக்கல்களை கொண்டது.',
+    nb_rid_tag1: 'குகை ஓவியங்கள்',
+    nb_rid_tag2: 'தந்த செதுக்கல்',
+
+    nb_ath_title: 'அத்துகல யானை பாறை & பிரம்மாண்ட புத்தர்',
+    nb_ath_dist: 'மாளிகாதென்னவிலிருந்து ~28 km',
+    nb_ath_era: 'கலாச்சார அடையாளம்',
+    nb_ath_desc: '316 மீட்டர் உயரமுள்ள யானை வடிவ பாறை மலையின் உச்சியில் அமைந்துள்ள 88 அடி உயர பிரம்மாண்ட வெள்ளை புத்தர் சிலை மற்றும் குருநாகலின் முழுமையான காட்சி.',
+    nb_ath_tag1: '88 அடி புத்தர் சிலை',
+    nb_ath_tag2: 'முழுமையான காட்சி',
 
     /* Hero */
     hero_badge: 'இலங்கை பாரம்பரியம்',
@@ -812,6 +1022,7 @@ function applyTranslations() {
       if (key.startsWith('dyk_') || key.startsWith('evidence_p') ||
         key.startsWith('tradition_p') || key.startsWith('monastery_p') ||
         key.startsWith('patana_desc') || key.startsWith('chanka_desc') ||
+        key.startsWith('help_card') || key.startsWith('help_tip') ||
         key === 'tl_desc1' || key === 'tl_desc2' || key === 'note_desc') {
         el.innerHTML = text;
       } else {
@@ -856,6 +1067,11 @@ function applyTranslations() {
   const labelEl = document.getElementById('current-lang-label');
   if (labelEl) labelEl.textContent = labels[currentLang] || 'සිංහල';
 
+  // Update in-modal lang buttons active class
+  document.querySelectorAll('.help-lang-btn').forEach(btn => {
+    btn.classList.toggle('active-lang', btn.dataset.lang === currentLang);
+  });
+
   // Update html lang attribute
   document.documentElement.setAttribute('lang', currentLang);
   document.documentElement.setAttribute('data-lang', currentLang);
@@ -868,7 +1084,7 @@ function setLanguage(lang) {
   applyTranslations();
 
   // Highlight active footer lang btn, dropdown, and hero pills
-  document.querySelectorAll('.footer-lang-btn, .lang-option, .hero-lang-btn').forEach(btn => {
+  document.querySelectorAll('.footer-lang-btn, .lang-option, .hero-lang-btn, .help-lang-btn').forEach(btn => {
     btn.classList.toggle('active-lang', btn.dataset.lang === lang);
   });
 }
@@ -1468,7 +1684,74 @@ function initMobileDock() {
 }
 
 /* ===================================================================
-   21. INITIALIZATION
+   21. HELP / USER GUIDE MODAL (TRILINGUAL)
+   =================================================================== */
+function initHelpModal() {
+  const modal = document.getElementById('help-modal');
+  const navBtn = document.getElementById('nav-help-btn');
+  const dockBtn = document.getElementById('dock-help-btn');
+  const closeBtn = document.getElementById('help-close-btn');
+  const dismissBtn = document.getElementById('help-dismiss-btn');
+  const inModalLangBtns = modal ? modal.querySelectorAll('.help-lang-btn') : [];
+
+  if (!modal) return;
+
+  function openHelp() {
+    modal.style.display = 'flex';
+    // Trigger animation frame for smooth opacity & scale transition
+    requestAnimationFrame(() => {
+      modal.classList.add('active');
+    });
+    document.body.classList.add('modal-open');
+  }
+
+  function closeHelp() {
+    modal.classList.remove('active');
+    setTimeout(() => {
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }, 250);
+  }
+
+  if (navBtn) navBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openHelp();
+  });
+
+  if (dockBtn) dockBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openHelp();
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeHelp);
+  if (dismissBtn) dismissBtn.addEventListener('click', closeHelp);
+
+  // Close when clicking outside the container (on the backdrop)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeHelp();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+      closeHelp();
+    }
+  });
+
+  // In-modal language switch buttons
+  inModalLangBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lang = btn.getAttribute('data-lang');
+      setLanguage(lang);
+    });
+  });
+}
+
+/* ===================================================================
+   22. INITIALIZATION
    =================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   // Theme & Language
@@ -1478,6 +1761,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Preloader & Welcome Experience
   initPreloader();
   initWelcomeModal();
+  initHelpModal();
 
   // Navigation systems
   initNavbar();
@@ -1497,7 +1781,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Global language switchers
   document.querySelectorAll('[data-lang]').forEach(btn => {
-    if (btn.classList.contains('footer-lang-btn') || btn.classList.contains('lang-option') || btn.classList.contains('hero-lang-btn')) {
+    if (btn.classList.contains('footer-lang-btn') || btn.classList.contains('lang-option') || btn.classList.contains('hero-lang-btn') || btn.classList.contains('help-lang-btn')) {
       btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     }
   });
