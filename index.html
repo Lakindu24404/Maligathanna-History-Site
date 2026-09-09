@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="si" data-theme="light" data-lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maligathanna Archaeological Site - An ancient forest monastic complex of the Anuradhapura period in Kurunegala District, Sri Lanka." />
+  <meta name="keywords" content="Maligathanna, Archaeological Site, Sri Lanka Heritage, Anuradhapura, Patanaghara, Chankamanaghara, Kurunegala" />
+  <title>Maligathanna | Archaeological Heritage Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;500;600;700&family=Noto+Serif+Sinhala:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Tamil:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="assets/images/facon.jpg" type="image/x-icon">
+</head>
+<body>
+<!-- Cursor -->
+ <div class="custom-cursor"></div>
+ 
+<!-- PRELOADER -->
+<div id="site-preloader" class="site-preloader" aria-hidden="true">
+  <div class="preloader-backdrop"></div>
+  <div class="preloader-card">
+    <div class="preloader-emblem">
+      <div class="preloader-sun-ring"></div>
+      <div class="preloader-ring"></div>
+      <div class="preloader-ring-inner"></div>
+      <div class="preloader-icon-wrap"><i class="fas fa-landmark"></i></div>
+    </div>
+    <div class="preloader-titles">
+      <h2 class="preloader-title-si">මාලිගාතැන්න</h2>
+      <h3 class="preloader-title-en">MALIGATHANNA</h3>
+      <p class="preloader-sub">පුරාවිද්‍යා උරුම භූමිය • ARCHAEOLOGICAL SITE</p>
+    </div>
+    <div class="preloader-bar-wrap">
+      <div class="preloader-bar-fill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- WELCOME LANGUAGE MODAL — MUSEUM SPLIT PANEL -->
+<div id="welcome-modal" class="welcome-modal" role="dialog" aria-modal="true" aria-label="Welcome to Maligathanna / භාෂාව තෝරන්න">
+
+  <!-- LEFT PANEL: Full-bleed photograph -->
+  <div class="wm-photo-panel">
+    <img src="assets/images/img04-site-aerial-wide.jpg" alt="Maligathanna Archaeological Complex" class="wm-photo" />
+    <div class="wm-photo-overlay"></div>
+    <div class="wm-photo-caption">
+      <span class="wm-site-label">ARCHAEOLOGICAL SITE</span>
+      <h2 class="wm-photo-title">Maligathanna</h2>
+      <p class="wm-photo-sub">Kurunegala District, Sri Lanka</p>
+    </div>
+    <!-- Decorative year stamp -->
+    <div class="wm-year-stamp">
+      <span class="wm-year-era">Anuradhapura Period</span>
+      <span class="wm-year-divider">|</span>
+      <span class="wm-year-num">c. 100 BCE – 1000 CE</span>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: Language selection -->
+  <div class="wm-select-panel">
+    <!-- Top institution badge -->
+    <div class="wm-institution">
+      <div class="wm-badge-line"></div>
+      <span>ARCHAEOLOGY DEPARTMENT · SRI LANKA</span>
+      <div class="wm-badge-line"></div>
+    </div>
+
+    <!-- Main title block -->
+    <div class="wm-titles">
+      <h1 class="wm-title-si">මාලිගාතැන්න<br>පුරාවිද්‍යා ස්ථානය</h1>
+      <p class="wm-title-en">Maligathanna Archaeological Site</p>
+      <p class="wm-title-ta">மாலிகாத்தன்ன தொல்லியல் தளம்</p>
+    </div>
+
+    <!-- Thin divider -->
+    <div class="wm-rule"></div>
+
+    <!-- Language prompt -->
+    <p class="wm-lang-prompt">Select your preferred language to continue<br><span lang="si">ඔබේ භාෂාව තෝරා ගන්න</span> · <span lang="ta">மொழியை தேர்ந்தெடுக்கவும்</span></p>
+
+    <!-- Language rows -->
+    <div class="wm-lang-list">
+
+      <button class="wm-lang-row wm-lang-primary" data-lang="si" id="wbtn-si">
+        <div class="wml-flag">
+          <svg viewBox="0 0 64 48" width="38" height="28">
+            <rect width="64" height="48" rx="3" fill="#8D153A"/>
+            <rect x="0" y="0" width="10" height="48" rx="3" fill="#FFBE29"/>
+            <rect x="10" y="0" width="8" height="48" fill="#00534E"/>
+            <rect x="18" y="0" width="8" height="48" fill="#EB7B12"/>
+            <rect x="26" y="0" width="4" height="48" fill="#FFBE29"/>
+            <rect x="28" y="2" width="34" height="44" rx="2" fill="#8D153A" stroke="#FFBE29" stroke-width="2"/>
+            <circle cx="45" cy="24" r="9" fill="#FFBE29" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="wml-info">
+          <span class="wml-name" lang="si">සිංහල</span>
+          <span class="wml-sub">Sinhala · ප්‍රධාන භාෂාව</span>
+        </div>
+        <div class="wml-badge">DEFAULT</div>
+        <i class="fas fa-chevron-right wml-arrow"></i>
+      </button>
+
+      <button class="wm-lang-row" data-lang="en" id="wbtn-en">
+        <div class="wml-flag">
+          <svg viewBox="0 0 64 48" width="38" height="28">
+            <rect width="64" height="48" rx="3" fill="#012169"/>
+            <path d="M0 0 L64 48 M64 0 L0 48" stroke="#ffffff" stroke-width="8"/>
+            <path d="M0 0 L64 48 M64 0 L0 48" stroke="#C8102E" stroke-width="4"/>
+            <path d="M32 0 V48 M0 24 H64" stroke="#ffffff" stroke-width="12"/>
+            <path d="M32 0 V48 M0 24 H64" stroke="#C8102E" stroke-width="7"/>
+          </svg>
+        </div>
+        <div class="wml-info">
+          <span class="wml-name">English</span>
+          <span class="wml-sub">International Language</span>
+        </div>
+        <i class="fas fa-chevron-right wml-arrow"></i>
+      </button>
+
+      <button class="wm-lang-row" data-lang="ta" id="wbtn-ta">
+        <div class="wml-flag">
+          <svg viewBox="0 0 64 48" width="38" height="28">
+            <rect width="64" height="48" rx="3" fill="#8D153A"/>
+            <rect x="0" y="0" width="10" height="48" rx="3" fill="#FFBE29"/>
+            <rect x="10" y="0" width="8" height="48" fill="#00534E"/>
+            <rect x="18" y="0" width="8" height="48" fill="#EB7B12"/>
+            <rect x="26" y="0" width="4" height="48" fill="#FFBE29"/>
+            <rect x="28" y="2" width="34" height="44" rx="2" fill="#8D153A" stroke="#FFBE29" stroke-width="2"/>
+            <circle cx="45" cy="24" r="9" fill="#FFBE29" opacity="0.9"/>
+          </svg>
+        </div>
+        <div class="wml-info">
+          <span class="wml-name" lang="ta">தமிழ்</span>
+          <span class="wml-sub">Tamil · தமிழ் மொழி</span>
+        </div>
+        <i class="fas fa-chevron-right wml-arrow"></i>
+      </button>
+
+    </div>
+
+    <!-- Footer note -->
+    <p class="wm-footer-note">
+      <i class="fas fa-shield-alt"></i>
+      Protected Archaeological Monument · Kurunegala, Sri Lanka
+    </p>
+  </div>
+
+  <!-- Close button (top-right corner) -->
+  <button class="wm-close" id="welcome-close-btn" aria-label="Enter with Sinhala">
+    <i class="fas fa-times"></i>
+  </button>
+
+</div>
+
+<!-- MOBILE FLOATING DOCK NAVIGATION (IMAGE 4 STYLE) -->
+<nav id="mobile-dock" class="mobile-dock" aria-label="Quick Mobile Navigation">
+  <div class="dock-inner">
+    <a href="#hero" class="dock-item active" data-dock="hero" aria-label="මුල් පිටුව / Home">
+      <span class="dock-indicator"></span>
+      <i class="fas fa-home"></i>
+      <span class="dock-tooltip" data-i18n="nav_home">මුල් පිටුව</span>
+    </a>
+    <a href="#glance" class="dock-item" data-dock="glance" aria-label="දළ විශ්ලේෂණය / Overview">
+      <span class="dock-indicator"></span>
+      <i class="fas fa-info-circle"></i>
+      <span class="dock-tooltip" data-i18n="nav_overview">දළ විශ්ලේෂණය</span>
+    </a>
+    <a href="#history" class="dock-item" data-dock="history" aria-label="ඉතිහාසය / History">
+      <span class="dock-indicator"></span>
+      <i class="fas fa-layer-group"></i>
+      <span class="dock-tooltip" data-i18n="nav_history">ඉතිහාසය</span>
+    </a>
+    <a href="#location" class="dock-item" data-dock="location" aria-label="පිහිටීම / Location">
+      <span class="dock-indicator"></span>
+      <i class="fas fa-map-marker-alt"></i>
+      <span class="dock-tooltip" data-i18n="nav_location">පිහිටීම</span>
+    </a>
+    <a href="#architecture" class="dock-item" data-dock="architecture" aria-label="ගෘහ නිර්මාණ / Architecture">
+      <span class="dock-indicator"></span>
+      <i class="fas fa-landmark"></i>
+      <span class="dock-tooltip" data-i18n="nav_architecture">ගෘහ නිර්මාණ</span>
+    </a>
+    <a href="#gallery" class="dock-item" data-dock="gallery" aria-label="ඡායාරූප / Gallery">
+      <span class="dock-indicator"></span>
+      <i class="fas fa-images"></i>
+      <span class="dock-tooltip" data-i18n="nav_gallery">ඡායාරූප</span>
+    </a>
+    <a href="#preservation" class="dock-item" data-dock="preservation" aria-label="සංරක්ෂණය / Preservation">
+      <span class="dock-indicator"></span>
+      <i class="fas fa-shield-alt"></i>
+      <span class="dock-tooltip" data-i18n="nav_preservation">සංරක්ෂණය</span>
+    </a>
+    <button class="dock-item dock-lang-toggle" id="dock-lang-btn" aria-label="Change Language / භාෂාව">
+      <span class="dock-indicator"></span>
+      <i class="fas fa-language"></i>
+      <span class="dock-tooltip" data-i18n="nav_change_lang">භාෂාව</span>
+    </button>
+  </div>
+</nav>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="#hero" class="brand-link" aria-label="Maligathanna Home">
+        <span class="brand-icon"><i class="fas fa-landmark"></i></span>
+        <div class="brand-text">
+          <span class="brand-name" data-i18n="site_name">මාලිගාතැන්න</span>
+          <span class="brand-sub" data-i18n="site_sub">පුරාවිද්‍යා උරුම ස්ථානය</span>
+        </div>
+      </a>
+    </div>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="#hero" class="nav-link active" data-i18n="nav_home">මුල් පිටුව</a></li>
+      <li><a href="#glance" class="nav-link" data-i18n="nav_overview">දළ විශ්ලේෂණය</a></li>
+      <li><a href="#history" class="nav-link" data-i18n="nav_history">ඉතිහාසය</a></li>
+      <li><a href="#location" class="nav-link" data-i18n="nav_location">පිහිටීම</a></li>
+      <li><a href="#architecture" class="nav-link" data-i18n="nav_architecture">ගෘහ නිර්මාණ</a></li>
+      <li><a href="#gallery" class="nav-link" data-i18n="nav_gallery">ඡායාරූප</a></li>
+      <li><a href="#preservation" class="nav-link" data-i18n="nav_preservation">සංරක්ෂණය</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-dropdown-wrapper">
+        <button class="lang-toggle-btn" id="nav-lang-btn" aria-label="Change language / භාෂාව මාරු කරන්න" aria-expanded="false" title="Change Language / භාෂාව මාරු කරන්න">
+          <i class="fas fa-language"></i>
+          <span id="current-lang-label">සිංහල</span>
+          <span class="change-lang-badge" data-i18n="nav_change_lang">භාෂාව මාරු කරන්න</span>
+          <i class="fas fa-chevron-down nav-lang-arrow"></i>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown" role="menu">
+          <button class="lang-option active-lang" data-lang="si" role="menuitem">
+            <span class="flag-icon">🇱🇰</span>
+            <span class="opt-label">සිංහල <small>(Sinhala - Default)</small></span>
+          </button>
+          <button class="lang-option" data-lang="en" role="menuitem">
+            <span class="flag-icon">🇬🇧</span>
+            <span class="opt-label">English</span>
+          </button>
+          <button class="lang-option" data-lang="ta" role="menuitem">
+            <span class="flag-icon">🇱🇰</span>
+            <span class="opt-label">தமிழ் <small>(Tamil)</small></span>
+          </button>
+        </div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+
+<!-- HERO / WELCOME SECTION -->
+<section id="hero" class="hero-section">
+  <div class="hero-carousel" id="hero-carousel">
+    <div class="hero-slide active" style="background-image: url('assets/images/img04-site-aerial-wide.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('assets/images/img01-chankamana-aerial.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('assets/images/img14-chankamana-axis.jpg')"></div>
+    <div class="hero-slide" style="background-image: url('assets/images/img02-patana-aerial.jpg')"></div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="carousel-dots" role="tablist">
+    <button class="dot active" role="tab" aria-label="Slide 1" data-index="0"></button>
+    <button class="dot" role="tab" aria-label="Slide 2" data-index="1"></button>
+    <button class="dot" role="tab" aria-label="Slide 3" data-index="2"></button>
+    <button class="dot" role="tab" aria-label="Slide 4" data-index="3"></button>
+  </div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge" data-i18n="hero_badge">ශ්‍රී ලාංකීය සංස්කෘතික උරුමය</div>
+      <h1 class="hero-title">
+        <span class="title-main" data-i18n="hero_title_main">මාලිගාතැන්න පුරාවිද්‍යා ස්ථානය</span>
+        <div class="hero-multilingual-titles">
+          <span class="sub-lang en"><i class="fas fa-landmark"></i> Maligathanna Archaeological Heritage Site</span>
+          <span class="sub-lang ta"><i class="fas fa-monument"></i> மாளிகாதன்ன தொல்பொருளியல் பாரம்பரிய தளம்</span>
+        </div>
+      </h1>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">අනුරාධපුර යුගයට අයත් පුරාතන ආරණ්‍ය සේනාසන සංකීර්ණය</p>
+      <p class="hero-desc" data-i18n="hero_desc">වයඹ පළාතේ කුරුණෑගල දිස්ත්‍රික්කයේ පොල්පිතිගම ප්‍රාදේශීය ලේකම් කොට්ඨාශයේ අංක 369 රාවා ඇල ග්‍රාම නිලධාරී වසමේ පිහිටි ඓතිහාසික හා වාස්තු විද්‍යාත්මක වැදගත්කමකින් යුත් පුරාවිද්‍යා ස්ථානයකි.</p>
+      
+      <!-- Welcome Trilingual Language Quick Selector -->
+      <div class="hero-lang-bar">
+        <span class="hero-lang-hint"><i class="fas fa-language"></i> භාෂාව / Language / மொழி:</span>
+        <div class="hero-lang-pills">
+          <button class="hero-lang-btn active-lang" data-lang="si" aria-label="සිංහල">🇱🇰 සිංහල</button>
+          <button class="hero-lang-btn" data-lang="en" aria-label="English">🇬🇧 English</button>
+          <button class="hero-lang-btn" data-lang="ta" aria-label="தமிழ்">🇱🇰 தமிழ்</button>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#glance" class="btn-primary" data-i18n="hero_btn_explore"><i class="fas fa-compass"></i> ස්ථානය ගවේෂණය කරන්න</a>
+        <a href="#gallery" class="btn-secondary" data-i18n="hero_btn_gallery"><i class="fas fa-images"></i> ඡායාරූප නරඹන්න</a>
+      </div>
+    </div>
+    <div class="hero-image-card">
+      <div class="hero-img-wrapper" title="පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන (Patanaghara Double-Platform — Aerial View)">
+        <img src="assets/images/img02-patana-aerial.jpg" alt="පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන" title="පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන (Patanaghara Double-Platform — Aerial View)" loading="eager" />
+        <div class="hero-img-caption">
+          <span class="img-label" data-i18n="hero_img_label">පඨානඝර ගොඩනැගිල්ල</span>
+          <span class="img-sublabel" data-i18n="hero_img_sublabel">ද්විමාලිගා ආරණ්‍ය ආරාම ව්‍යුහය</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <span data-i18n="scroll_down">පහළට ගවේෂණය කරන්න</span>
+    <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+  </div>
+</section>
+
+<!-- AT A GLANCE -->
+<section id="glance" class="glance-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="glance_tag">Quick Overview</span>
+      <h2 data-i18n="glance_title">At a Glance</h2>
+    </div>
+    <div class="glance-grid">
+      <div class="glance-card reveal">
+        <div class="glance-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3 data-i18n="glance_location_title">Location</h3>
+        <p data-i18n="glance_location_desc">Polpithigama Divisional Secretariat, Kurunegala District, North Western Province</p>
+      </div>
+      <div class="glance-card reveal">
+        <div class="glance-icon"><i class="fas fa-landmark"></i></div>
+        <h3 data-i18n="glance_period_title">Period</h3>
+        <p data-i18n="glance_period_desc">Anuradhapura Period — based on archaeological evidence and architectural characteristics</p>
+      </div>
+      <div class="glance-card reveal">
+        <div class="glance-icon"><i class="fas fa-scroll"></i></div>
+        <h3 data-i18n="glance_tradition_title">Local Tradition</h3>
+        <p data-i18n="glance_tradition_desc">Local tradition associates the site with King Valagamba, who is said to have offered it to monks</p>
+      </div>
+      <div class="glance-card reveal">
+        <div class="glance-icon"><i class="fas fa-tree"></i></div>
+        <h3 data-i18n="glance_type_title">Site Type</h3>
+        <p data-i18n="glance_type_desc">Forest monastic complex — a secluded religious and architectural site for meditation</p>
+      </div>
+      <div class="glance-card reveal">
+        <div class="glance-icon"><i class="fas fa-ruler-combined"></i></div>
+        <h3 data-i18n="glance_area_title">Archaeological Area</h3>
+        <p data-i18n="glance_area_desc">Approximately 27 acres of identified archaeological remains</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="location-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="location_tag">How to Get There</span>
+      <h2 data-i18n="location_title">Where is Maligathanna?</h2>
+      <p class="section-desc" data-i18n="location_intro">Located in the Rawa Ela GN Division No. 369, Polpithigama Divisional Secretariat, Kurunegala District.</p>
+    </div>
+    <div class="location-layout">
+      <div class="location-info reveal">
+        <div class="location-admin">
+          <div class="admin-item"><i class="fas fa-globe-asia"></i><div><span class="admin-label" data-i18n="loc_province">Province</span><span class="admin-value" data-i18n="loc_province_val">North Western Province</span></div></div>
+          <div class="admin-item"><i class="fas fa-map"></i><div><span class="admin-label" data-i18n="loc_district">District</span><span class="admin-value" data-i18n="loc_district_val">Kurunegala District</span></div></div>
+          <div class="admin-item"><i class="fas fa-building"></i><div><span class="admin-label" data-i18n="loc_ds">Divisional Secretariat</span><span class="admin-value" data-i18n="loc_ds_val">Polpithigama</span></div></div>
+          <div class="admin-item"><i class="fas fa-map-pin"></i><div><span class="admin-label" data-i18n="loc_gn">GN Division</span><span class="admin-value" data-i18n="loc_gn_val">Rawa Ela — No. 369</span></div></div>
+        </div>
+        <a href="https://www.google.com/maps/search/Polpithigama+Kurunegala" target="_blank" rel="noopener noreferrer" class="map-btn">
+          <i class="fas fa-map-marked-alt"></i> <span data-i18n="view_map">View on Map</span>
+        </a>
+      </div>
+      <div class="route-timeline reveal">
+        <h3 data-i18n="route_title">Route from Kurunegala</h3>
+        <div class="route-steps">
+          <div class="route-step"><div class="step-dot start"></div><div class="step-content"><span class="step-place" data-i18n="route_start">Kurunegala</span><span class="step-road" data-i18n="route_road">Kurunegala – Madagalla Road</span></div></div>
+          <div class="route-connector"><span data-i18n="route_25km">25 km</span></div>
+          <div class="route-step"><div class="step-dot"></div><div class="step-content"><span class="step-place" data-i18n="route_egoda">Egodagama Junction</span><span class="step-road" data-i18n="route_turn_south">Turn south → Thalakolawawa Road</span></div></div>
+          <div class="route-connector"><span data-i18n="route_2km">2 km</span></div>
+          <div class="route-step"><div class="step-dot"></div><div class="step-content"><span class="step-place" data-i18n="route_batuyaaya">Batuyaaya Junction</span><span class="step-road" data-i18n="route_side_road">Take the side road to the south</span></div></div>
+          <div class="route-connector"><span data-i18n="route_450m">450 m</span></div>
+          <div class="route-step"><div class="step-dot end"></div><div class="step-content"><span class="step-place destination" data-i18n="route_dest">Maligathanna</span><span class="step-road" data-i18n="route_arrive">Archaeological Site</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="history-section">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-tag" data-i18n="history_tag">The Past Speaks</span>
+      <h2 data-i18n="history_title">The Story of Maligathanna</h2>
+      <p class="section-desc" data-i18n="history_intro">Understanding the distinction between what archaeology reveals and what tradition remembers.</p>
+    </div>
+    <div class="history-tabs">
+      <button class="history-tab active" data-tab="evidence" data-i18n="tab_evidence"><i class="fas fa-microscope"></i> Archaeological Evidence</button>
+      <button class="history-tab" data-tab="tradition" data-i18n="tab_tradition"><i class="fas fa-scroll"></i> Local Tradition</button>
+      <button class="history-tab" data-tab="monastery" data-i18n="tab_monastery"><i class="fas fa-dharmachakra"></i> Monastic Character</button>
+    </div>
+    <div class="history-panels">
+      <div class="history-panel active" id="panel-evidence">
+        <div class="panel-layout">
+          <div class="panel-text">
+            <div class="evidence-badge"><i class="fas fa-search"></i> <span data-i18n="evidence_label">Based on Archaeological Evidence</span></div>
+            <h3 data-i18n="evidence_title">Anuradhapura Period Origins</h3>
+            <p data-i18n="evidence_p1">The archaeological evidence and architectural characteristics of the structures at Maligathanna suggest that the site belongs to the <strong>Anuradhapura period</strong> of Sri Lanka's history.</p>
+            <p data-i18n="evidence_p2">However, <strong>no written evidence directly connected with Maligathanna</strong> has been found so far. The site's history must therefore be interpreted primarily through its physical remains and architectural features.</p>
+            <div class="evidence-note"><i class="fas fa-info-circle"></i><span data-i18n="evidence_note">The absence of written records means the site's precise historical narrative remains a subject of ongoing scholarly investigation.</span></div>
+          </div>
+          <div class="panel-image"><img src="assets/images/img10-chankamana-inner.jpg" alt="Interior of the Chankamanaghara" loading="lazy" /></div>
+        </div>
+      </div>
+      <div class="history-panel" id="panel-tradition">
+        <div class="panel-layout">
+          <div class="panel-text">
+            <div class="tradition-badge"><i class="fas fa-users"></i> <span data-i18n="tradition_label">Local Tradition — Not Archaeologically Confirmed</span></div>
+            <h3 data-i18n="tradition_title">The Legend of King Valagamba</h3>
+            <p data-i18n="tradition_p1">Local tradition holds that <strong>King Valagamba</strong> (Vattagamani Abhaya) constructed the site and offered it to forest-dwelling monks. Villagers also believe that King Valagamba's royal palace once existed here — an association reflected in the very name "Maligathanna."</p>
+            <p data-i18n="tradition_p2">The nearby <strong>Ma Eliya Wewa</strong> (reservoir) is also traditionally considered to have been constructed during the reign of King Valagamba.</p>
+            <div class="tradition-note"><i class="fas fa-exclamation-triangle"></i><span data-i18n="tradition_note">Important: There is no archaeological evidence confirming that a royal palace existed at this site. These accounts represent local oral tradition, not documented historical fact.</span></div>
+          </div>
+          <div class="panel-image"><img src="assets/images/img03-stone-stairway.jpg" alt="Stone stairway at Maligathanna" loading="lazy" /></div>
+        </div>
+      </div>
+      <div class="history-panel" id="panel-monastery">
+        <div class="panel-layout">
+          <div class="panel-text">
+            <div class="monastery-badge"><i class="fas fa-dharmachakra"></i> <span data-i18n="monastery_label">Scholarly Interpretation</span></div>
+            <h3 data-i18n="monastery_title">A Forest Monastic Complex</h3>
+            <p data-i18n="monastery_p1">Based on the architectural evidence, scholars interpret Maligathanna not as a palace site, but as a <strong>monastic complex designed for forest-dwelling monks</strong> — a category of practitioners who sought secluded environments for deep meditation.</p>
+            <p data-i18n="monastery_p2">The site's design — double-platform structures, natural rock ponds, a walking meditation hall, and deep forest setting — is entirely consistent with the requirements of <strong>forest monastery (aranna sena)</strong> traditions of ancient Sri Lanka.</p>
+          </div>
+          <div class="panel-image"><img src="assets/images/img11-nature-site-view.jpg" alt="Forest setting of Maligathanna" loading="lazy" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHAEOLOGICAL REMAINS -->
+<section id="remains" class="remains-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="remains_tag">What Was Found</span>
+      <h2 data-i18n="remains_title">Archaeological Remains</h2>
+      <p class="section-desc" data-i18n="remains_intro">Later research identified remains spread across approximately 27 acres. Click any card to learn more.</p>
+    </div>
+    <div class="remains-grid">
+      <div class="remain-card reveal" tabindex="0" aria-expanded="false">
+        <div class="remain-card-front"><div class="remain-icon"><i class="fas fa-building"></i></div><h3 data-i18n="remain_patana">Patanaghara</h3><span class="remain-si">පඨානඝර</span><button class="learn-more-btn" data-i18n="learn_more">Learn More <i class="fas fa-chevron-down"></i></button></div>
+        <div class="remain-card-detail"><p data-i18n="remain_patana_detail">Double-platform forest meditation building with an outer mandapa and inner chamber. A distinctive feature of ancient Sri Lankan forest monasticism. Conserved by the Department of Archaeology.</p></div>
+      </div>
+      <div class="remain-card reveal" tabindex="0" aria-expanded="false">
+        <div class="remain-card-front"><div class="remain-icon"><i class="fas fa-walking"></i></div><h3 data-i18n="remain_chankamanagara">Chankamanaghara</h3><span class="remain-si">චංකමනාඝර</span><button class="learn-more-btn" data-i18n="learn_more">Learn More <i class="fas fa-chevron-down"></i></button></div>
+        <div class="remain-card-detail"><p data-i18n="remain_chanka_detail">A walking meditation hall used by monks for kinhin (walking meditation). Excavated and conserved by the Department of Archaeology in 1998. Now a declared protected monument.</p></div>
+      </div>
+      <div class="remain-card reveal" tabindex="0" aria-expanded="false">
+        <div class="remain-card-front"><div class="remain-icon"><i class="fas fa-layer-group"></i></div><h3 data-i18n="remain_steps_con">Constructed Steps</h3><span class="remain-si">නිර්මාණය කළ පඩිපෙළ</span><button class="learn-more-btn" data-i18n="learn_more">Learn More <i class="fas fa-chevron-down"></i></button></div>
+        <div class="remain-card-detail"><p data-i18n="remain_steps_con_detail">Carved and constructed stone stairways providing access between the different platform levels, associated with the platform architecture of the site.</p></div>
+      </div>
+      <div class="remain-card reveal" tabindex="0" aria-expanded="false">
+        <div class="remain-card-front"><div class="remain-icon"><i class="fas fa-mountain"></i></div><h3 data-i18n="remain_steps_rock">Rock-cut Steps</h3><span class="remain-si">ගල් කොටා සෑදූ පඩිපෙළ</span><button class="learn-more-btn" data-i18n="learn_more">Learn More <i class="fas fa-chevron-down"></i></button></div>
+        <div class="remain-card-detail"><p data-i18n="remain_steps_rock_detail">Natural rock surfaces carved into steps, providing access to elevated areas. A practical feature of ancient Sri Lankan rock monastery architecture.</p></div>
+      </div>
+      <div class="remain-card reveal" tabindex="0" aria-expanded="false">
+        <div class="remain-card-front"><div class="remain-icon"><i class="fas fa-water"></i></div><h3 data-i18n="remain_ponds">Natural Rock Ponds</h3><span class="remain-si">ස්වාභාවික ගල් විල්</span><button class="learn-more-btn" data-i18n="learn_more">Learn More <i class="fas fa-chevron-down"></i></button></div>
+        <div class="remain-card-detail"><p data-i18n="remain_ponds_detail">Natural depressions in rock that collect and store water, with rock-cut stairways providing access. These occur at several locations across the site.</p></div>
+      </div>
+      <div class="remain-card reveal" tabindex="0" aria-expanded="false">
+        <div class="remain-card-front"><div class="remain-icon"><i class="fas fa-circle-notch"></i></div><h3 data-i18n="remain_grinding">Grinding Marks</h3><span class="remain-si">ඇඹරීමේ සලකුණු</span><button class="learn-more-btn" data-i18n="learn_more">Learn More <i class="fas fa-chevron-down"></i></button></div>
+        <div class="remain-card-detail"><p data-i18n="remain_grinding_detail">Marks on rock surfaces created by grinding activities — evidence of daily monastic life at the site during its period of occupation.</p></div>
+      </div>
+      <div class="remain-card reveal" tabindex="0" aria-expanded="false">
+        <div class="remain-card-front"><div class="remain-icon"><i class="fas fa-border-all"></i></div><h3 data-i18n="remain_ketukawata">Ketukawata</h3><span class="remain-si">කේතුකවාට</span><button class="learn-more-btn" data-i18n="learn_more">Learn More <i class="fas fa-chevron-down"></i></button></div>
+        <div class="remain-card-detail"><p data-i18n="remain_ketukawata_detail">Additional monastic architectural element identified within the approximately 27-acre site area. Forms part of the complex of remains at Maligathanna.</p></div>
+      </div>
+      <div class="remain-card reveal" tabindex="0" aria-expanded="false">
+        <div class="remain-card-front"><div class="remain-icon"><i class="fas fa-ellipsis-h"></i></div><h3 data-i18n="remain_other">Other Remains</h3><span class="remain-si">වෙනත් නටබුන්</span><button class="learn-more-btn" data-i18n="learn_more">Learn More <i class="fas fa-chevron-down"></i></button></div>
+        <div class="remain-card-detail"><p data-i18n="remain_other_detail">Additional archaeological remains have been identified across the 27-acre site, including roof tile fragments near the Patanaghara that confirm the structures originally had roofs.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section id="architecture" class="architecture-section">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-tag" data-i18n="arch_tag">Major Structures</span>
+      <h2 data-i18n="arch_title">Key Architectural Features</h2>
+    </div>
+    <div class="arch-tabs">
+      <button class="arch-tab active" data-arch="patana" id="tab-patana"><span data-i18n="patana_label">Patanaghara</span><small>පඨානඝර</small></button>
+      <button class="arch-tab" data-arch="chanka" id="tab-chanka"><span data-i18n="chanka_label">Chankamanaghara</span><small>චංකමනාඝර</small></button>
+    </div>
+    <div class="arch-panel active" id="arch-patana">
+      <div class="arch-layout">
+        <div class="arch-images">
+          <div class="arch-main-img"><img src="assets/images/img02-patana-aerial.jpg" alt="පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන" title="පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන (Patanaghara Double-Platform — Aerial View)" loading="lazy" /></div>
+          <div class="arch-thumb-row">
+            <img src="assets/images/img09-patana-upper-platform.jpg" alt="පඨානඝර ඉහළ වේදිකාව" title="පඨානඝර ඉහළ වේදිකාව (Patanaghara Upper Platform)" loading="lazy" class="arch-thumb" />
+            <img src="assets/images/img12-outer-platform-view.jpg" alt="පිටත මණ්ඩප වේදිකාව" title="පිටත මණ්ඩප වේදිකාව (Outer Mandapa Platform View)" loading="lazy" class="arch-thumb" />
+            <img src="assets/images/img05-platform-steps.jpg" alt="ඉහළ වේදිකාවට පිවිසෙන ගල් පියගැට" title="ඉහළ වේදිකාවට පිවිසෙන ගල් පියගැට (Stone Steps to Upper Platform)" loading="lazy" class="arch-thumb" />
+          </div>
+        </div>
+        <div class="arch-info">
+          <h3 class="arch-name"><span data-i18n="patana_title">Patanaghara</span><span class="arch-name-si">පඨානඝර</span></h3>
+          <p data-i18n="patana_desc1">These buildings were created in forest environments, with site selection considering the need for secluded places suitable for deep meditation — separate from crowded areas frequented by lay devotees.</p>
+          <p data-i18n="patana_desc2">A defining feature is its <strong>double-platform architecture</strong>. The two platforms can be described as the outer mandapa and the inner chamber, connected by a single stone slab.</p>
+          <div class="arch-diagram">
+            <div class="diag-title" data-i18n="diag_title">Architectural Layout</div>
+            <div class="diag-flow">
+              <div class="diag-box outer" data-i18n="diag_outer">Outer Mandapa<br/><small>(ප්‍රධාන ශාලාව)</small></div>
+              <div class="diag-arrow"><i class="fas fa-arrow-down"></i></div>
+              <div class="diag-box connector" data-i18n="diag_slab">Single Stone Slab<br/><small>(සම්බන්ධක ශිලා)</small></div>
+              <div class="diag-arrow"><i class="fas fa-arrow-down"></i></div>
+              <div class="diag-box inner" data-i18n="diag_inner">Inner Chamber<br/><small>(අභ්‍යන්තර කාමරය)</small></div>
+            </div>
+          </div>
+          <div class="arch-feature-list">
+            <div class="arch-feature"><i class="fas fa-water"></i><span data-i18n="patana_water">A natural water channel surrounds the upper building, possibly for animal protection and temperature regulation.</span></div>
+            <div class="arch-feature"><i class="fas fa-exclamation-circle"></i><span data-i18n="patana_damage">A portion of the main staircase has been damaged due to human activity.</span></div>
+            <div class="arch-feature"><i class="fas fa-hard-hat"></i><span data-i18n="patana_conserved">The Patanaghara has been conserved and declared a protected monument.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="arch-panel" id="arch-chanka">
+      <div class="arch-layout">
+        <div class="arch-images">
+          <div class="arch-main-img"><img src="assets/images/img14-chankamana-axis.jpg" alt="චංකමනාඝර දිගු අක්ෂීය දසුන" title="චංකමනාඝර දිගු අක්ෂීය දසුන (Chankamanaghara Long Axis View)" loading="lazy" /></div>
+          <div class="arch-thumb-row">
+            <img src="assets/images/img01-chankamana-aerial.jpg" alt="චංකමනාඝරය — ගුවන් දසුන" title="චංකමනාඝරය — ගුවන් දසුන (Chankamanaghara — Aerial View)" loading="lazy" class="arch-thumb" />
+            <img src="assets/images/img06-chankamana-interior.jpg" alt="චංකමනාඝරය — අභ්‍යන්තර සක්මන් මාර්ගය" title="චංකමනාඝරය — අභ්‍යන්තර සක්මන් මාර්ගය (Chankamanaghara — Interior Walking Path)" loading="lazy" class="arch-thumb" />
+            <img src="assets/images/img10-chankamana-inner.jpg" alt="චංකමනාඝරය — මධ්‍යම ව්‍යුහය" title="චංකමනාඝරය — මධ්‍යම ව්‍යුහය (Chankamanaghara Central Structure)" loading="lazy" class="arch-thumb" />
+          </div>
+        </div>
+        <div class="arch-info">
+          <h3 class="arch-name"><span data-i18n="chanka_title">Chankamanaghara</span><span class="arch-name-si">චංකමනාඝර</span></h3>
+          <div class="conservation-badge"><i class="fas fa-award"></i><span data-i18n="chanka_badge">1998 — Excavated &amp; Conserved by the Department of Archaeology</span></div>
+          <p data-i18n="chanka_desc1">The Chankamanaghara is a walking meditation hall — an important element of ancient Buddhist monastic architecture. It was likely used by resident monks for their practice of chankamana (walking meditation).</p>
+          <p data-i18n="chanka_desc2">The Chankamanaghara at Maligathanna was excavated and conserved by the <strong>Department of Archaeology in 1998</strong> and has been declared a protected monument.</p>
+          <div class="arch-feature-list">
+            <div class="arch-feature"><i class="fas fa-walking"></i><span data-i18n="chanka_feature1">Used for kinhin (walking meditation) practice by forest-dwelling monks.</span></div>
+            <div class="arch-feature"><i class="fas fa-shield-alt"></i><span data-i18n="chanka_feature2">Declared a legally protected monument.</span></div>
+            <div class="arch-feature"><i class="fas fa-hard-hat"></i><span data-i18n="chanka_feature3">Ongoing archaeological supervision by the Department of Archaeology.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="other-features">
+      <h3 class="other-feat-title" data-i18n="other_feat_title">Other Architectural Features</h3>
+      <div class="features-row">
+        <div class="feat-card reveal"><img src="assets/images/img03-stone-stairway.jpg" alt="ගල් පියගැට සහ සඳකඩපහණ" title="ගල් පියගැට සහ සඳකඩපහණ (Stone Stairway with Moonstone)" loading="lazy" /><div class="feat-card-info"><h4 data-i18n="feat_stairway">Stone Stairways</h4><p data-i18n="feat_stairway_desc">Constructed stone steps with moonstones</p></div></div>
+        <div class="feat-card reveal"><img src="assets/images/img08-platform-wall-exterior.jpg" alt="පඨානඝර පිටත ආරක්ෂිත ගල් බැම්ම" title="පඨානඝර පිටත ආරක්ෂිත ගල් බැම්ම (Platform Stone Wall Exterior)" loading="lazy" /><div class="feat-card-info"><h4 data-i18n="feat_walls">Platform Walls</h4><p data-i18n="feat_walls_desc">Double-tiered retaining walls</p></div></div>
+        <div class="feat-card reveal"><img src="assets/images/img16-gateway-entrance.jpg" alt="ගල් උළුවහු ප්‍රවේශ දොරටුව" title="ගල් උළුවහු ප්‍රවේශ දොරටුව (Stone Gateway Entrance)" loading="lazy" /><div class="feat-card-info"><h4 data-i18n="feat_gateway">Stone Gateway</h4><p data-i18n="feat_gateway_desc">Monolithic stone doorframe entrance</p></div></div>
+        <div class="feat-card reveal"><img src="assets/images/img15-steps-under-tree.jpg" alt="වන වියන යට පිහිටි ගල් පියගැට" title="වන වියන යට පිහිටි ගල් පියගැට (Stone Steps under Tree Canopy)" loading="lazy" /><div class="feat-card-info"><h4 data-i18n="feat_entry">Platform Entry</h4><p data-i18n="feat_entry_desc">Stair access to raised platform areas</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline-section" class="timeline-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="timeline_tag">Through the Ages</span>
+      <h2 data-i18n="timeline_title">Historical Timeline</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><span class="tl-period anc" data-i18n="tl_period1">Anuradhapura Period</span><h4 data-i18n="tl_title1">Construction of the Monastic Complex</h4><p data-i18n="tl_desc1">Archaeological and architectural evidence indicates the site dates to the Anuradhapura period. The exact date of construction remains unknown.</p><span class="tl-badge archaeology" data-i18n="tl_badge_arch">Archaeological Evidence</span></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><span class="tl-period trad" data-i18n="tl_period2">Local Tradition</span><h4 data-i18n="tl_title2">King Valagamba — Traditional Association</h4><p data-i18n="tl_desc2">Local tradition says King Valagamba constructed the site and offered it to forest-dwelling monks. This has not been confirmed by archaeological evidence.</p><span class="tl-badge tradition" data-i18n="tl_badge_trad">Local Tradition Only</span></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><span class="tl-period hist" data-i18n="tl_period3">1969</span><h4 data-i18n="tl_title3">Settlement Removed</h4><p data-i18n="tl_desc3">A settlement that had formed at the site was removed by the Department of Archaeology, enabling systematic research.</p><span class="tl-badge action" data-i18n="tl_badge_action">Department of Archaeology</span></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><span class="tl-period hist" data-i18n="tl_period4">After 1969</span><h4 data-i18n="tl_title4">Remains Identified — 27 Acres</h4><p data-i18n="tl_desc4">Later research identified archaeological remains spread across approximately 27 acres, revealing the full extent of the ancient monastic complex.</p><span class="tl-badge archaeology" data-i18n="tl_badge_arch">Archaeological Research</span></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><span class="tl-period hist" data-i18n="tl_period5">1998</span><h4 data-i18n="tl_title5">Chankamanaghara Excavated &amp; Conserved</h4><p data-i18n="tl_desc5">The Chankamanaghara (walking meditation hall) was excavated and conserved by the Department of Archaeology.</p><span class="tl-badge action" data-i18n="tl_badge_conserve">Conservation Work</span></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-content"><span class="tl-period present" data-i18n="tl_period6">Protected</span><h4 data-i18n="tl_title6">Declared Protected Monuments</h4><p data-i18n="tl_desc6">The conserved Patanaghara and Chankamanaghara were declared protected monuments under Sri Lankan archaeological preservation law.</p><span class="tl-badge protected" data-i18n="tl_badge_prot">Legal Protection</span></div></div>
+      <div class="tl-item reveal"><div class="tl-dot present-dot"></div><div class="tl-content"><span class="tl-period present" data-i18n="tl_period7">Present</span><h4 data-i18n="tl_title7">Ongoing Archaeological Supervision</h4><p data-i18n="tl_desc7">The site is currently maintained as a permanent worksite under the supervision of the Department of Archaeology.</p><span class="tl-badge current" data-i18n="tl_badge_current">Active Worksite</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-section">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-tag" data-i18n="gallery_tag">Visual Heritage</span>
+      <h2 data-i18n="gallery_title">Photo Gallery</h2>
+      <p class="section-desc" data-i18n="gallery_intro">Explore the archaeological site through photography.</p>
+    </div>
+    <div class="gallery-filters" role="tablist">
+      <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+      <button class="filter-btn" data-filter="aerial" data-i18n="filter_aerial">Aerial Views</button>
+      <button class="filter-btn" data-filter="patana" data-i18n="filter_patana">Patanaghara</button>
+      <button class="filter-btn" data-filter="chanka" data-i18n="filter_chanka">Chankamanaghara</button>
+      <button class="filter-btn" data-filter="stone" data-i18n="filter_stone">Stone Structures</button>
+      <button class="filter-btn" data-filter="nature" data-i18n="filter_nature">Nature</button>
+    </div>
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="gallery-item" data-category="aerial chanka" data-index="0" title="චංකමනාඝරය — ගුවන් දසුන (Chankamanaghara — Aerial View)"><img src="assets/images/img01-chankamana-aerial.jpg" alt="චංකමනාඝරය — ගුවන් දසුන" title="චංකමනාඝරය — ගුවන් දසුන (Chankamanaghara — Aerial View)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_aerial">ගුවන් දසුන</span><span class="gallery-cap" data-i18n="gcap_01">චංකමනාඝරය — ගුවන් දසුන</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="aerial patana" data-index="1" title="පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන (Patanaghara Building — Aerial View)"><img src="assets/images/img02-patana-aerial.jpg" alt="පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන" title="පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන (Patanaghara Building — Aerial View)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_aerial">ගුවන් දසුන</span><span class="gallery-cap" data-i18n="gcap_02">පඨානඝර ගොඩනැගිල්ල — ගුවන් දසුන</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="stone patana" data-index="2" title="ගල් පියගැට සහ සඳකඩපහණ (Stone Stairway with Moonstone)"><img src="assets/images/img03-stone-stairway.jpg" alt="ගල් පියගැට සහ සඳකඩපහණ" title="ගල් පියගැට සහ සඳකඩපහණ (Stone Stairway with Moonstone)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_stone">පාෂාණ නිර්මාණය</span><span class="gallery-cap" data-i18n="gcap_03">ගල් පියගැට සහ සඳකඩපහණ</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="aerial nature" data-index="3" title="මාලිගාතැන්න පරිශ්‍රය — පුළුල් ගුවන් දසුන (Maligathanna Forest Monastery — Wide Aerial View)"><img src="assets/images/img04-site-aerial-wide.jpg" alt="මාලිගාතැන්න පරිශ්‍රය — පුළුල් ගුවන් දසුන" title="මාලිගාතැන්න පරිශ්‍රය — පුළුල් ගුවන් දසුන (Maligathanna Forest Monastery — Wide Aerial View)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_aerial">ගුවන් දසුන</span><span class="gallery-cap" data-i18n="gcap_04">මාලිගාතැන්න පරිශ්‍රය — පුළුල් ගුවන් දසුන</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="stone patana" data-index="4" title="ඉහළ වේදිකාවට පිවිසෙන ගල් පියගැට (Stone Steps to Upper Platform)"><img src="assets/images/img05-platform-steps.jpg" alt="ඉහළ වේදිකාවට පිවිසෙන ගල් පියගැට" title="ඉහළ වේදිකාවට පිවිසෙන ගල් පියගැට (Stone Steps to Upper Platform)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_stone">පාෂාණ නිර්මාණය</span><span class="gallery-cap" data-i18n="gcap_05">ඉහළ වේදිකාවට පිවිසෙන ගල් පියගැට</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="chanka stone" data-index="5" title="චංකමනාඝරය — අභ්‍යන්තර සක්මන් මාර්ගය (Chankamanaghara — Interior Walking Path)"><img src="assets/images/img06-chankamana-interior.jpg" alt="චංකමනාඝරය — අභ්‍යන්තර සක්මන් මාර්ගය" title="චංකමනාඝරය — අභ්‍යන්තර සක්මන් මාර්ගය (Chankamanaghara — Interior Walking Path)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_chanka">චංකමනාඝරය</span><span class="gallery-cap" data-i18n="gcap_06">චංකමනාඝරය — අභ්‍යන්තර සක්මන් මාර්ගය</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="stone" data-index="6" title="ගල් බැම්ම සහ දොරටු මුහුණත (Stone Platform Wall with Doorway)"><img src="assets/images/img07-stone-wall-door.jpg" alt="ගල් බැම්ම සහ දොරටු මුහුණත" title="ගල් බැම්ම සහ දොරටු මුහුණත (Stone Platform Wall with Doorway)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_stone">පාෂාණ නිර්මාණය</span><span class="gallery-cap" data-i18n="gcap_07">ගල් බැම්ම සහ දොරටු මුහුණත</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="patana stone" data-index="7" title="පඨානඝර පිටත ආරක්ෂිත ගල් බැම්ම (Patanaghara Exterior Platform Wall)"><img src="assets/images/img08-platform-wall-exterior.jpg" alt="පඨානඝර පිටත ආරක්ෂිත ගල් බැම්ම" title="පඨානඝර පිටත ආරක්ෂිත ගල් බැම්ම (Patanaghara Exterior Platform Wall)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_stone">පාෂාණ නිර්මාණය</span><span class="gallery-cap" data-i18n="gcap_08">පඨානඝර පිටත ආරක්ෂිත ගල් බැම්ම</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="patana" data-index="8" title="පඨානඝර ඉහළ වේදිකාව (Patanaghara Upper Chamber Platform)"><img src="assets/images/img09-patana-upper-platform.jpg" alt="පඨානඝර ඉහළ වේදිකාව" title="පඨානඝර ඉහළ වේදිකාව (Patanaghara Upper Chamber Platform)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_patana">පඨානඝරය</span><span class="gallery-cap" data-i18n="gcap_09">පඨානඝර ඉහළ වේදිකාව</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="chanka" data-index="9" title="චංකමනාඝරය — මධ්‍යම ව්‍යුහය (Chankamanaghara Central Structure)"><img src="assets/images/img10-chankamana-inner.jpg" alt="චංකමනාඝරය — මධ්‍යම ව්‍යුහය" title="චංකමනාඝරය — මධ්‍යම ව්‍යුහය (Chankamanaghara Central Structure)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_chanka">චංකමනාඝරය</span><span class="gallery-cap" data-i18n="gcap_10">චංකමනාඝරය — මධ්‍යම ව්‍යුහය</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="nature" data-index="10" title="වනාන්තරගත පරිසරය සහ ස්වභාවික පාෂාණ (Forest Setting and Natural Rock Formations)"><img src="assets/images/img11-nature-site-view.jpg" alt="වනාන්තරගත පරිසරය සහ ස්වභාවික පාෂාණ" title="වනාන්තරගත පරිසරය සහ ස්වභාවික පාෂාණ (Forest Setting and Natural Rock Formations)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_nature">ස්වභාව සෞන්දර්යය</span><span class="gallery-cap" data-i18n="gcap_11">වනාන්තරගත පරිසරය සහ ස්වභාවික පාෂාණ</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="patana stone" data-index="11" title="පිටත මණ්ඩප වේදිකාව (Outer Mandapa Platform View)"><img src="assets/images/img12-outer-platform-view.jpg" alt="පිටත මණ්ඩප වේදිකාව" title="පිටත මණ්ඩප වේදිකාව (Outer Mandapa Platform View)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_patana">පඨානඝරය</span><span class="gallery-cap" data-i18n="gcap_12">පිටත මණ්ඩප වේදිකාව</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="stone" data-index="12" title="සකස් කරන ලද පාෂාණ විස්තර (Carved Stone Architecture Details)"><img src="assets/images/img13-stone-detail.jpg" alt="සකස් කරන ලද පාෂාණ විස්තර" title="සකස් කරන ලද පාෂාණ විස්තර (Carved Stone Architecture Details)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_stone">පාෂාණ නිර්මාණය</span><span class="gallery-cap" data-i18n="gcap_13">සකස් කරන ලද පාෂාණ විස්තර</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="chanka" data-index="13" title="චංකමනාඝර දිගු අක්ෂීය දසුන (Chankamanaghara Long Axis View)"><img src="assets/images/img14-chankamana-axis.jpg" alt="චංකමනාඝර දිගු අක්ෂීය දසුන" title="චංකමනාඝර දිගු අක්ෂීය දසුන (Chankamanaghara Long Axis View)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_chanka">චංකමනාඝරය</span><span class="gallery-cap" data-i18n="gcap_14">චංකමනාඝර දිගු අක්ෂීය දසුන</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="stone nature" data-index="14" title="වන වියන යට පිහිටි ගල් පියගැට (Stone Steps under Tree Canopy)"><img src="assets/images/img15-steps-under-tree.jpg" alt="වන වියන යට පිහිටි ගල් පියගැට" title="වන වියන යට පිහිටි ගල් පියගැට (Stone Steps under Tree Canopy)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_stone">පාෂාණ නිර්මාණය</span><span class="gallery-cap" data-i18n="gcap_15">වන වියන යට පිහිටි ගල් පියගැට</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="stone" data-index="15" title="ගල් උළුවහු ප්‍රවේශ දොරටුව (Stone Gateway Entrance)"><img src="assets/images/img16-gateway-entrance.jpg" alt="ගල් උළුවහු ප්‍රවේශ දොරටුව" title="ගල් උළුවහු ප්‍රවේශ දොරටුව (Stone Gateway Entrance)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_stone">පාෂාණ නිර්මාණය</span><span class="gallery-cap" data-i18n="gcap_16">ගල් උළුවහු ප්‍රවේශ දොරටුව</span><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item" data-category="stone" data-index="16" title="පුරාණ ශිලා උළුවස්ස (Ancient Monolithic Stone Doorframe)"><img src="assets/images/img17-stone-doorframe.jpg" alt="පුරාණ ශිලා උළුවස්ස" title="පුරාණ ශිලා උළුවස්ස (Ancient Monolithic Stone Doorframe)" loading="lazy" /><div class="gallery-overlay"><span class="gallery-cat" data-i18n="gcat_stone">පාෂාණ නිර්මාණය</span><span class="gallery-cap" data-i18n="gcap_17">පුරාණ ශිලා උළුවස්ස</span><i class="fas fa-expand"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox" style="display:none;">
+  <button class="lb-close" id="lb-close" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
+  <button class="lb-prev" id="lb-prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+  <button class="lb-next" id="lb-next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+  <div class="lb-content"><img id="lb-img" src="" alt="" /><div class="lb-caption"><span class="lb-cat" id="lb-cat"></span><span class="lb-title" id="lb-title"></span><span class="lb-counter" id="lb-counter"></span></div></div>
+</div>
+
+<!-- PRESERVATION -->
+<section id="preservation" class="preservation-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-i18n="pres_tag">Heritage Stewardship</span>
+      <h2 data-i18n="pres_title">Preserving the Heritage</h2>
+      <p class="section-desc" data-i18n="pres_intro">The journey of protecting Maligathanna's archaeological legacy.</p>
+    </div>
+    <div class="pres-layout">
+      <div class="pres-image reveal"><img src="assets/images/img08-platform-wall-exterior.jpg" alt="Conserved platform wall at Maligathanna" loading="lazy" /><div class="pres-img-caption" data-i18n="pres_img_cap">Conserved platform walls at Maligathanna</div></div>
+      <div class="pres-timeline reveal">
+        <div class="pres-step"><div class="pres-year">1969</div><div class="pres-desc"><h4 data-i18n="pres_1969_title">Settlement Removed</h4><p data-i18n="pres_1969_desc">A settlement that had formed at the site was removed by the Department of Archaeology, opening the site for proper research.</p></div></div>
+        <div class="pres-connector"></div>
+        <div class="pres-step"><div class="pres-year" data-i18n="pres_research_year">Research</div><div class="pres-desc"><h4 data-i18n="pres_research_title">Archaeological Research</h4><p data-i18n="pres_research_desc">Later research identified archaeological remains spread across approximately 27 acres.</p></div></div>
+        <div class="pres-connector"></div>
+        <div class="pres-step"><div class="pres-year">1998</div><div class="pres-desc"><h4 data-i18n="pres_1998_title">Conservation Works</h4><p data-i18n="pres_1998_desc">The Patanaghara and Chankamanaghara were conserved by the Department of Archaeology. The Chankamanaghara was specifically excavated in 1998.</p></div></div>
+        <div class="pres-connector"></div>
+        <div class="pres-step pres-present"><div class="pres-year" data-i18n="pres_present">Present</div><div class="pres-desc"><h4 data-i18n="pres_present_title">Protected &amp; Active Worksite</h4><p data-i18n="pres_present_desc">The conserved monuments are declared protected monuments. The site is maintained as a permanent worksite under ongoing Department of Archaeology supervision.</p></div></div>
+      </div>
+    </div>
+    <div class="dyk-section">
+      <h3 class="dyk-title" data-i18n="dyk_title">Did You Know?</h3>
+      <div class="dyk-grid">
+        <div class="dyk-card reveal"><div class="dyk-icon"><i class="fas fa-ruler-combined"></i></div><p data-i18n="dyk_1">The site covers approximately <strong>27 acres</strong> of archaeological remains.</p></div>
+        <div class="dyk-card reveal"><div class="dyk-icon"><i class="fas fa-layer-group"></i></div><p data-i18n="dyk_2">The Patanaghara has a distinctive <strong>double-platform</strong> architecture with an outer mandapa and inner chamber.</p></div>
+        <div class="dyk-card reveal"><div class="dyk-icon"><i class="fas fa-water"></i></div><p data-i18n="dyk_3">A <strong>natural water channel</strong> surrounds the upper building of the Patanaghara.</p></div>
+        <div class="dyk-card reveal"><div class="dyk-icon"><i class="fas fa-shovel"></i></div><p data-i18n="dyk_4">The Chankamanaghara was <strong>excavated and conserved in 1998</strong> by the Department of Archaeology.</p></div>
+        <div class="dyk-card reveal"><div class="dyk-icon"><i class="fas fa-home"></i></div><p data-i18n="dyk_5"><strong>Roof tile remains</strong> near the Patanaghara confirm the structures originally had roofs.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORICAL NOTE -->
+<section class="historical-note-section">
+  <div class="container">
+    <div class="historical-note reveal">
+      <div class="note-icon"><i class="fas fa-book-open"></i></div>
+      <div class="note-content">
+        <h3 data-i18n="note_title">Historical Accuracy Note</h3>
+        <p data-i18n="note_desc">This website presents information based on archaeological documentation. Where archaeological evidence and local tradition differ, they are clearly presented separately. Local traditions are labelled as such and are not presented as historically confirmed facts. The absence of written records at this site means interpretation relies primarily on architectural and material evidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <i class="fas fa-landmark"></i>
+          <div>
+            <span class="footer-name" data-i18n="site_name">Maligathanna</span>
+            <span class="footer-name-si">මාලිගාතැන්න</span>
+            <span class="footer-site-type" data-i18n="site_sub">Archaeological Heritage Site</span>
+          </div>
+        </div>
+        <p class="footer-tagline" data-i18n="footer_tagline">Preserving the rich archaeological heritage of Sri Lanka</p>
+        <div class="footer-lang">
+          <button class="footer-lang-btn" data-lang="si">සිංහල</button>
+          <button class="footer-lang-btn" data-lang="en">English</button>
+          <button class="footer-lang-btn" data-lang="ta">தமிழ்</button>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <h4 data-i18n="footer_nav_title">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+          <li><a href="#glance" data-i18n="nav_overview">Overview</a></li>
+          <li><a href="#history" data-i18n="nav_history">History</a></li>
+          <li><a href="#location" data-i18n="nav_location">Location</a></li>
+          <li><a href="#architecture" data-i18n="nav_architecture">Architecture</a></li>
+          <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
+          <li><a href="#preservation" data-i18n="nav_preservation">Preservation</a></li>
+        </ul>
+      </div>
+      <div class="footer-info">
+        <h4 data-i18n="footer_info_title">Site Information</h4>
+        <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="glance_location_desc">Polpithigama Divisional Secretariat, Kurunegala District, North Western Province</span></p>
+        <p><i class="fas fa-shield-alt"></i> <span data-i18n="footer_under">Under the supervision of the Department of Archaeology, Sri Lanka</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p class="footer-copy" data-i18n="footer_copy">&copy; 2026 Maligathanna Archaeological Heritage Site. All rights reserved.</p>
+      <div class="footer-dev-credit">
+        <i class="fas fa-laptop-code"></i>
+        <span>2026 copywrite developed and design by <strong>L.S.COMPUTER TECHNOLOGH</strong></span>
+      </div>
+      <p class="footer-disclaimer" data-i18n="footer_disclaimer">Content based on archaeological documentation. Historical traditions are noted where applicable.</p>
+    </div>
+  </div>
+  <div class="footer-silhouette" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 L60,30 L120,40 L180,20 L220,35 L260,15 L300,35 L360,25 L420,40 L480,10 L540,30 L600,20 L660,40 L720,15 L780,35 L840,20 L900,40 L960,25 L1020,40 L1080,15 L1140,35 L1200,20 L1260,40 L1320,25 L1380,40 L1440,30 L1440,80 L0,80 Z" fill="currentColor" opacity="0.15"/>
+      <rect x="100" y="35" width="8" height="20" fill="currentColor" opacity="0.3" rx="1"/>
+      <rect x="96" y="32" width="16" height="5" fill="currentColor" opacity="0.3" rx="1"/>
+      <rect x="400" y="28" width="6" height="27" fill="currentColor" opacity="0.3" rx="1"/>
+      <rect x="396" y="25" width="14" height="5" fill="currentColor" opacity="0.3" rx="1"/>
+      <rect x="800" y="32" width="10" height="23" fill="currentColor" opacity="0.3" rx="1"/>
+      <rect x="795" y="28" width="20" height="6" fill="currentColor" opacity="0.3" rx="1"/>
+      <rect x="1100" y="30" width="7" height="25" fill="currentColor" opacity="0.3" rx="1"/>
+      <rect x="1096" y="27" width="15" height="5" fill="currentColor" opacity="0.3" rx="1"/>
+    </svg>
+  </div>
+</footer>
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+<script src="script.js"></script>
+</body>
+</html>
