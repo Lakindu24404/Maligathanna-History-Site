@@ -58,6 +58,16 @@ const translations = {
     help_card5_desc: 'මාලිගාතැන්න අවට පිහිටි <strong>රැස්වෙහෙර, යාපහුව, අරංකැලේ, හත්ථිකුච්චි, රිදී විහාරය සහ ඇතුගල</strong> වැනි ඓතිහාසික ස්ථානවල දුර ප්‍රමාණයන් හා තොරතුරු ගවේෂණය කරන්න.',
     help_card6_title: '6. රාත්‍රී/දිවා තේමාව සහ ජංගම දුරකථන පහසුව',
     help_card6_desc: 'ඇස්වලට පහසු <strong>අඳුරු තේමාව (Dark Mode)</strong> මාරු කර ගත හැක. ජංගම දුරකථන භාවිතයේදී පහළින් දිස්වන floating dock මඟින් ක්ෂණිකව ඕනෑම කොටසකට පිවිසිය හැක.',
+    help_card7_title: '7. හඬින් කියවීමේ පහසුකම (Text-to-Speech)',
+    help_card7_desc: 'සෑම ප්‍රධාන කොටසකම ඇති <strong>\'🔊 කියවන්න\'</strong> බොත්තම එබීමෙන් අදාළ ඓතිහාසික තොරතුරු ඔබ තෝරාගත් භාෂාවෙන් (සිංහල, English, தமிழ்) ශ්‍රවණය කළ හැක. කියවීම නැවැත්වීමට ඕනෑම වේලාවක <strong>\'⏹ නවත්වන්න\'</strong> ඔබන්න.',
+
+    /* Text-to-Speech (Read Aloud) */
+    tts_read: 'කියවන්න',
+    tts_reading: 'කියවමින්...',
+    tts_stop: 'නවත්වන්න',
+    tts_aria_read: 'මෙම කොටස හඬින් අසන්න',
+    tts_aria_stop: 'හඬ කියවීම නවත්වන්න',
+    tts_not_supported: 'ඔබගේ බ්‍රවුසරයේ පෙළ හඬ බවට පත් කිරීමේ (Text-to-Speech) පහසුකම සහාය නොදක්වයි.',
 
     /* Nearby Section */
     nearby_tag: 'සංචාරක සහ ඓතිහාසික මඟපෙන්වීම',
@@ -376,6 +386,16 @@ const translations = {
     help_card5_desc: 'Discover top attractions near Maligathanna such as <strong>Resvehera, Yapahuwa, Arankele, Haththikuchchi, Ridi Viharaya, and Athugala</strong> with travel distances and directions.',
     help_card6_title: '6. Dark / Light Mode & Mobile Dock',
     help_card6_desc: 'Toggle eye-friendly <strong>Dark Mode</strong> with the Moon/Sun icon. On mobile phones, use the bottom floating dock to jump instantly between sections.',
+    help_card7_title: '7. Multilingual Read Aloud (Text-to-Speech)',
+    help_card7_desc: 'Click the <strong>\'🔊 Read\'</strong> button in any major section to listen to historical details in your chosen language (Sinhala, English, or Tamil). Click <strong>\'⏹ Stop\'</strong> anytime to pause or stop reading.',
+
+    /* Text-to-Speech (Read Aloud) */
+    tts_read: 'Read',
+    tts_reading: 'Reading...',
+    tts_stop: 'Stop',
+    tts_aria_read: 'Read this section aloud',
+    tts_aria_stop: 'Stop reading aloud',
+    tts_not_supported: 'Text-to-Speech is not supported in this browser.',
 
     /* Nearby Section */
     nearby_tag: 'Regional Heritage Guide',
@@ -694,6 +714,16 @@ const translations = {
     help_card5_desc: 'மாளிகாதென்னவுக்கு அருகிலுள்ள <strong>ரஸ்வெஹெர, யாப்பகூவ, அரங்கெலே, ஹத்திகுச்சி, ரிதி விகாரை, அத்துகல</strong> போன்ற வரலாற்று இடங்களை தூரத்துடன் கண்டறியவும்.',
     help_card6_title: '6. இரவு/பகல் தீம் & மொபைல் வசதி',
     help_card6_desc: 'கண்களுக்கு வசதியான <strong>டார்க் மோடை</strong> மாற்றலாம். மொபைல் போன்களில் கீழேயுள்ள ஃப்ளோட்டிங் டாக் மூலம் எந்த பகுதிக்கும் உடனடியாக செல்லலாம்.',
+    help_card7_title: '7. குரல் வழி வாசிப்பு வசதி (Text-to-Speech)',
+    help_card7_desc: 'ஒவ்வொரு முக்கிய பிரிவிலும் உள்ள <strong>\'🔊 படிக்க\'</strong> பொத்தானை அழுத்தி தேர்ந்தெடுக்கப்பட்ட மொழியில் (சிங்களம், ஆங்கிலம், தமிழ்) வரலாற்றுத் தகவல்களைக் கேட்கலாம். எந்த நேரத்திலும் நிறுத்த <strong>\'⏹ நிறுத்து\'</strong> அழுத்தவும்.',
+
+    /* Text-to-Speech (Read Aloud) */
+    tts_read: 'படிக்க',
+    tts_reading: 'வாசிக்கிறது...',
+    tts_stop: 'நிறுத்து',
+    tts_aria_read: 'இந்த பகுதியை குரலில் கேளுங்கள்',
+    tts_aria_stop: 'வாசிப்பதை நிறுத்து',
+    tts_not_supported: 'இந்த உலாவியில் Text-to-Speech வசதி ஆதரிக்கப்படவில்லை.',
 
     /* Nearby Section */
     nearby_tag: 'பிராந்திய பாரம்பரிய வழிகாட்டி',
@@ -1017,13 +1047,14 @@ function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     const text = t(key);
-    if (text) {
-      // Use innerHTML for keys that might contain HTML tags
-      if (key.startsWith('dyk_') || key.startsWith('evidence_p') ||
+    if (text !== undefined && text !== null) {
+      // Use innerHTML for keys that contain HTML tags like <br/>, <small>, <strong>
+      if (typeof text === 'string' && (text.includes('<') || text.includes('&') ||
+        key.startsWith('dyk_') || key.startsWith('evidence_p') ||
         key.startsWith('tradition_p') || key.startsWith('monastery_p') ||
         key.startsWith('patana_desc') || key.startsWith('chanka_desc') ||
-        key.startsWith('help_card') || key.startsWith('help_tip') ||
-        key === 'tl_desc1' || key === 'tl_desc2' || key === 'note_desc') {
+        key.startsWith('diag_') || key.startsWith('help_card') || key.startsWith('help_tip') ||
+        key === 'tl_desc1' || key === 'tl_desc2' || key === 'note_desc')) {
         el.innerHTML = text;
       } else {
         el.textContent = text;
@@ -1075,10 +1106,15 @@ function applyTranslations() {
   // Update html lang attribute
   document.documentElement.setAttribute('lang', currentLang);
   document.documentElement.setAttribute('data-lang', currentLang);
+
+  // Update read buttons labels and states
+  updateAllReadButtons();
 }
 
 function setLanguage(lang) {
   if (!translations[lang]) return;
+  // Stop active speech if any when language changes
+  stopSpeech();
   currentLang = lang;
   localStorage.setItem('mali_lang', lang);
   applyTranslations();
@@ -1751,12 +1787,369 @@ function initHelpModal() {
 }
 
 /* ===================================================================
-   22. INITIALIZATION
+   22. MULTILINGUAL TEXT-TO-SPEECH (READ ALOUD) ENGINE
+   Authentic natural audio speech for Sinhala (si), Tamil (ta), and English (en)
+   =================================================================== */
+let activeSpeechSectionId = null;
+let isSpeaking = false;
+let currentAudio = null;
+let speechSessionToken = 0;
+let availableVoices = [];
+
+// Pre-load available voices from speech synthesis
+function initSpeechVoices() {
+  if ('speechSynthesis' in window) {
+    const updateVoices = () => {
+      availableVoices = window.speechSynthesis.getVoices() || [];
+    };
+    updateVoices();
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = updateVoices;
+    }
+  }
+}
+
+// Find a matching voice for language, return null if no real voice exists
+function getNativeVoiceForLanguage(lang) {
+  if (!availableVoices.length && 'speechSynthesis' in window) {
+    availableVoices = window.speechSynthesis.getVoices() || [];
+  }
+  const langTargets = {
+    si: ['si-LK', 'si', 'sin', 'sinhala'],
+    ta: ['ta-LK', 'ta-IN', 'ta', 'tam', 'tamil'],
+    en: ['en-US', 'en-GB', 'en-AU', 'en-IN', 'en']
+  };
+  const targets = langTargets[lang] || ['en-US', 'en'];
+
+  for (const t of targets) {
+    const match = availableVoices.find(v => v.lang && v.lang.toLowerCase().replace('_', '-') === t.toLowerCase());
+    if (match) return match;
+  }
+  for (const t of targets) {
+    const match = availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith(t.toLowerCase()));
+    if (match) return match;
+  }
+  for (const t of targets) {
+    const match = availableVoices.find(v => v.name && v.name.toLowerCase().includes(t.toLowerCase()));
+    if (match) return match;
+  }
+  return null;
+}
+
+// Extract clean readable text from section DOM
+function extractSectionReadableText(sectionEl) {
+  if (!sectionEl) return '';
+
+  const clone = sectionEl.cloneNode(true);
+
+  // Remove UI elements that must never be read aloud
+  const ignoreSelectors = [
+    '[data-no-speech="true"]',
+    'button',
+    'nav',
+    'script',
+    'style',
+    'noscript',
+    'svg',
+    'img',
+    '.read-section-btn',
+    '.gallery-filters',
+    '.history-tabs',
+    '.arch-tabs',
+    '.carousel-dots',
+    '.scroll-indicator',
+    '.hero-lang-bar',
+    '.hero-cta',
+    '.map-btn',
+    '.nearby-card-btn',
+    '.learn-more-btn',
+    '.footer-lang',
+    '.footer-links',
+    '[aria-hidden="true"]'
+  ];
+
+  ignoreSelectors.forEach(sel => {
+    clone.querySelectorAll(sel).forEach(el => el.remove());
+  });
+
+  const blocks = [];
+  const textElements = clone.querySelectorAll(
+    'h1, h2, h3, h4, h5, h6, p, .section-desc, .admin-item, .route-step, .glance-card, .remain-card, .feat-card, .tl-item, .nearby-card-body, .dyk-card, .note-content, .arch-feature, .diag-box, .hero-subtitle, .hero-desc'
+  );
+
+  if (textElements.length > 0) {
+    textElements.forEach(el => {
+      if (el.closest('.route-steps') && !el.classList.contains('route-step')) return;
+      const text = el.innerText || el.textContent || '';
+      const clean = text.replace(/\s+/g, ' ').trim();
+      if (clean && clean.length > 1) {
+        const endsWithPunct = /[.!?:\u0DF4\u0D83]$/.test(clean);
+        blocks.push(endsWithPunct ? clean : clean + '.');
+      }
+    });
+  } else {
+    const rawText = clone.innerText || clone.textContent || '';
+    rawText.split('\n').forEach(line => {
+      const clean = line.replace(/\s+/g, ' ').trim();
+      if (clean) blocks.push(clean);
+    });
+  }
+
+  // Deduplicate adjacent identical lines
+  const uniqueBlocks = [];
+  blocks.forEach(b => {
+    if (!uniqueBlocks.length || uniqueBlocks[uniqueBlocks.length - 1] !== b) {
+      uniqueBlocks.push(b);
+    }
+  });
+
+  return uniqueBlocks.join(' ');
+}
+
+// Split into reliable sentence chunks (< 130 characters) for optimal natural pronunciation
+function chunkText(text) {
+  if (!text) return [];
+  const rawPieces = text.split(/([.!?\n\u0DF4\u0D83]+)/);
+  const sentences = [];
+  for (let i = 0; i < rawPieces.length; i += 2) {
+    const textPart = rawPieces[i] || '';
+    const punctPart = rawPieces[i + 1] || '';
+    const full = (textPart + punctPart).trim();
+    if (full) sentences.push(full);
+  }
+
+  const chunks = [];
+  sentences.forEach(s => {
+    if (s.length <= 130) {
+      chunks.push(s);
+    } else {
+      const words = s.split(' ');
+      let current = '';
+      words.forEach(w => {
+        if ((current + ' ' + w).length <= 130) {
+          current = current ? (current + ' ' + w) : w;
+        } else {
+          if (current) chunks.push(current);
+          current = w;
+        }
+      });
+      if (current) chunks.push(current);
+    }
+  });
+
+  return chunks.filter(c => c && c.trim().length > 0);
+}
+
+// Main Section Read Aloud Controller
+function readSection(sectionId) {
+  // If clicking active section -> stop reading
+  if (isSpeaking && activeSpeechSectionId === sectionId) {
+    stopSpeech();
+    return;
+  }
+
+  // Stop any active speech first
+  stopSpeech();
+
+  const sectionEl = document.getElementById(sectionId);
+  if (!sectionEl) return;
+
+  const textToRead = extractSectionReadableText(sectionEl);
+  if (!textToRead) return;
+
+  const chunks = chunkText(textToRead);
+  if (!chunks.length) return;
+
+  activeSpeechSectionId = sectionId;
+  isSpeaking = true;
+  speechSessionToken++;
+  const sessionToken = speechSessionToken;
+  updateSectionReadButtonState(sectionId, true);
+
+  let chunkIdx = 0;
+  const langCode = currentLang === 'si' ? 'si' : (currentLang === 'ta' ? 'ta' : 'en');
+  const nativeVoice = getNativeVoiceForLanguage(currentLang);
+
+  function playNextChunk() {
+    if (sessionToken !== speechSessionToken || !isSpeaking) return;
+
+    if (chunkIdx >= chunks.length) {
+      stopSpeech();
+      return;
+    }
+
+    const chunk = chunks[chunkIdx];
+
+    // If English and genuine native voice exists, use Web Speech API
+    if (currentLang === 'en' && nativeVoice && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window) {
+      const utterance = new SpeechSynthesisUtterance(chunk);
+      utterance.lang = 'en-US';
+      utterance.voice = nativeVoice;
+      utterance.rate = 0.95;
+      utterance.pitch = 1.0;
+
+      utterance.onend = () => {
+        if (sessionToken !== speechSessionToken) return;
+        chunkIdx++;
+        playNextChunk();
+      };
+
+      utterance.onerror = (e) => {
+        if (sessionToken !== speechSessionToken) return;
+        if (e.error === 'canceled' || e.error === 'interrupted') return;
+        chunkIdx++;
+        playNextChunk();
+      };
+
+      window.speechSynthesis.speak(utterance);
+    } else {
+      // Authentic Natural Sinhala (si), Tamil (ta), and fallback English (en)
+      const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${langCode}&q=${encodeURIComponent(chunk)}`;
+      const audio = new Audio();
+      currentAudio = audio;
+      audio.src = audioUrl;
+
+      audio.onended = () => {
+        if (sessionToken !== speechSessionToken) return;
+        chunkIdx++;
+        playNextChunk();
+      };
+
+      audio.onerror = (err) => {
+        if (sessionToken !== speechSessionToken) return;
+        console.warn('Audio stream error, attempting SpeechSynthesis:', err);
+        if ('speechSynthesis' in window && 'SpeechSynthesisUtterance' in window) {
+          const fallbackUtterance = new SpeechSynthesisUtterance(chunk);
+          fallbackUtterance.lang = langCode === 'si' ? 'si-LK' : (langCode === 'ta' ? 'ta-LK' : 'en-US');
+          fallbackUtterance.onend = () => {
+            if (sessionToken !== speechSessionToken) return;
+            chunkIdx++;
+            playNextChunk();
+          };
+          fallbackUtterance.onerror = () => {
+            if (sessionToken !== speechSessionToken) return;
+            chunkIdx++;
+            playNextChunk();
+          };
+          window.speechSynthesis.speak(fallbackUtterance);
+        } else {
+          chunkIdx++;
+          playNextChunk();
+        }
+      };
+
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(e => {
+          if (sessionToken !== speechSessionToken) return;
+          console.warn('Audio playback error:', e);
+          chunkIdx++;
+          playNextChunk();
+        });
+      }
+    }
+  }
+
+  playNextChunk();
+}
+
+// Stop speech and reset state
+function stopSpeech() {
+  speechSessionToken++;
+  if (currentAudio) {
+    try {
+      currentAudio.pause();
+      currentAudio.src = '';
+    } catch(e) {}
+    currentAudio = null;
+  }
+  if ('speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.cancel();
+    } catch(e) {}
+  }
+  if (activeSpeechSectionId) {
+    updateSectionReadButtonState(activeSpeechSectionId, false);
+  }
+  activeSpeechSectionId = null;
+  isSpeaking = false;
+}
+
+// Update UI button state for a specific section
+function updateSectionReadButtonState(sectionId, speaking) {
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+
+  const btn = section.querySelector('.read-section-btn');
+  if (!btn) return;
+
+  if (speaking) {
+    btn.classList.add('speaking');
+    btn.setAttribute('aria-pressed', 'true');
+    btn.setAttribute('aria-label', t('tts_aria_stop'));
+    btn.innerHTML = `
+      <span class="tts-soundwave" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+      <span class="tts-text">${t('tts_reading')}</span>
+      <span class="tts-stop-badge">${t('tts_stop')}</span>
+    `;
+  } else {
+    btn.classList.remove('speaking');
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', t('tts_aria_read'));
+    btn.innerHTML = `
+      <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+      <span class="tts-text">${t('tts_read')}</span>
+    `;
+  }
+}
+
+// Update all read buttons across the site
+function updateAllReadButtons() {
+  document.querySelectorAll('.read-section-btn').forEach(btn => {
+    const section = btn.closest('section');
+    const isThisSpeaking = isSpeaking && section && section.id === activeSpeechSectionId;
+    if (!isThisSpeaking) {
+      btn.classList.remove('speaking');
+      btn.setAttribute('aria-pressed', 'false');
+      btn.setAttribute('aria-label', t('tts_aria_read'));
+      btn.innerHTML = `
+        <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+        <span class="tts-text">${t('tts_read')}</span>
+      `;
+    }
+  });
+}
+
+// Fallback toast message
+function alertToast(msg) {
+  let toast = document.getElementById('site-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'site-toast';
+    toast.className = 'site-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 4000);
+}
+
+// Expose functions to global window scope for inline onclick handlers
+window.readSection = readSection;
+window.stopSpeech = stopSpeech;
+
+/* ===================================================================
+   23. INITIALIZATION
    =================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   // Theme & Language
   initTheme();
   applyTranslations();
+  initSpeechVoices();
 
   // Preloader & Welcome Experience
   initPreloader();
@@ -1786,7 +2179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  console.log('Maligathanna Heritage Site loaded with authentic heritage welcome, preloader & mobile dock.');
+  console.log('Maligathanna Heritage Site loaded with authentic heritage welcome, preloader, mobile dock & multilingual TTS.');
 });
 
 
@@ -1794,8 +2187,10 @@ document.addEventListener('DOMContentLoaded', () => {
 const cursor = document.querySelector(".custom-cursor");
 
 document.addEventListener("mousemove", (e) => {
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
+  if (cursor) {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+  }
 });
 
 document.querySelectorAll("a, button, .clickable").forEach((element) => {

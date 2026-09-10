@@ -251,6 +251,17 @@
           </div>
         </div>
 
+        <!-- Card 7: Multilingual Text-to-Speech Read Aloud -->
+        <div class="help-card">
+          <div class="help-card-icon">
+            <i class="fas fa-volume-high"></i>
+          </div>
+          <div class="help-card-content">
+            <h4 data-i18n="help_card7_title">7. හඬින් කියවීමේ පහසුකම (Text-to-Speech)</h4>
+            <p data-i18n="help_card7_desc">සෑම ප්‍රධාන කොටසකම ඇති <strong>'🔊 කියවන්න'</strong> බොත්තම එබීමෙන් අදාළ ඓතිහාසික තොරතුරු ඔබ තෝරාගත් භාෂාවෙන් (සිංහල, English, தமிழ்) ශ්‍රවණය කළ හැක. කියවීම නැවැත්වීමට ඕනෑම වේලාවක <strong>'⏹ නවත්වන්න'</strong> ඔබන්න.</p>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -412,7 +423,7 @@
       <p class="hero-desc" data-i18n="hero_desc">වයඹ පළාතේ කුරුණෑගල දිස්ත්‍රික්කයේ පොල්පිතිගම ප්‍රාදේශීය ලේකම් කොට්ඨාශයේ අංක 369 රාවා ඇල ග්‍රාම නිලධාරී වසමේ පිහිටි ඓතිහාසික හා වාස්තු විද්‍යාත්මක වැදගත්කමකින් යුත් පුරාවිද්‍යා ස්ථානයකි.</p>
       
       <!-- Welcome Trilingual Language Quick Selector -->
-      <div class="hero-lang-bar">
+      <div class="hero-lang-bar" data-no-speech="true">
         <span class="hero-lang-hint"><i class="fas fa-language"></i> භාෂාව / Language / மொழி:</span>
         <div class="hero-lang-pills">
           <button class="hero-lang-btn active-lang" data-lang="si" aria-label="සිංහල">🇱🇰 සිංහල</button>
@@ -421,8 +432,12 @@
         </div>
       </div>
 
-      <div class="hero-cta">
+      <div class="hero-cta" data-no-speech="true">
         <a href="#glance" class="btn-primary" data-i18n="hero_btn_explore"><i class="fas fa-compass"></i> ස්ථානය ගවේෂණය කරන්න</a>
+        <button class="read-section-btn" onclick="readSection('hero')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
         <a href="#gallery" class="btn-secondary" data-i18n="hero_btn_gallery"><i class="fas fa-images"></i> ඡායාරූප නරඹන්න</a>
       </div>
     </div>
@@ -446,7 +461,13 @@
 <section id="glance" class="glance-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag" data-i18n="glance_tag">Quick Overview</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="glance_tag">Quick Overview</span>
+        <button class="read-section-btn" onclick="readSection('glance')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="glance_title">At a Glance</h2>
     </div>
     <div class="glance-grid">
@@ -483,7 +504,13 @@
 <section id="location" class="location-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag" data-i18n="location_tag">How to Get There</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="location_tag">How to Get There</span>
+        <button class="read-section-btn" onclick="readSection('location')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="location_title">Where is Maligathanna?</h2>
       <p class="section-desc" data-i18n="location_intro">Located in the Rawa Ela GN Division No. 369, Polpithigama Divisional Secretariat, Kurunegala District.</p>
     </div>
@@ -519,11 +546,17 @@
 <section id="history" class="history-section">
   <div class="container">
     <div class="section-header light">
-      <span class="section-tag" data-i18n="history_tag">The Past Speaks</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="history_tag">The Past Speaks</span>
+        <button class="read-section-btn" onclick="readSection('history')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="history_title">The Story of Maligathanna</h2>
       <p class="section-desc" data-i18n="history_intro">Understanding the distinction between what archaeology reveals and what tradition remembers.</p>
     </div>
-    <div class="history-tabs">
+    <div class="history-tabs" data-no-speech="true">
       <button class="history-tab active" data-tab="evidence" data-i18n="tab_evidence"><i class="fas fa-microscope"></i> Archaeological Evidence</button>
       <button class="history-tab" data-tab="tradition" data-i18n="tab_tradition"><i class="fas fa-scroll"></i> Local Tradition</button>
       <button class="history-tab" data-tab="monastery" data-i18n="tab_monastery"><i class="fas fa-dharmachakra"></i> Monastic Character</button>
@@ -572,7 +605,13 @@
 <section id="remains" class="remains-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag" data-i18n="remains_tag">What Was Found</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="remains_tag">What Was Found</span>
+        <button class="read-section-btn" onclick="readSection('remains')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="remains_title">Archaeological Remains</h2>
       <p class="section-desc" data-i18n="remains_intro">Later research identified remains spread across approximately 27 acres. Click any card to learn more.</p>
     </div>
@@ -617,10 +656,16 @@
 <section id="architecture" class="architecture-section">
   <div class="container">
     <div class="section-header light">
-      <span class="section-tag" data-i18n="arch_tag">Major Structures</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="arch_tag">Major Structures</span>
+        <button class="read-section-btn" onclick="readSection('architecture')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="arch_title">Key Architectural Features</h2>
     </div>
-    <div class="arch-tabs">
+    <div class="arch-tabs" data-no-speech="true">
       <button class="arch-tab active" data-arch="patana" id="tab-patana"><span data-i18n="patana_label">Patanaghara</span><small>පඨානඝර</small></button>
       <button class="arch-tab" data-arch="chanka" id="tab-chanka"><span data-i18n="chanka_label">Chankamanaghara</span><small>චංකමනාඝර</small></button>
     </div>
@@ -695,7 +740,13 @@
 <section id="timeline-section" class="timeline-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag" data-i18n="timeline_tag">Through the Ages</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="timeline_tag">Through the Ages</span>
+        <button class="read-section-btn" onclick="readSection('timeline-section')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="timeline_title">Historical Timeline</h2>
     </div>
     <div class="timeline">
@@ -714,11 +765,17 @@
 <section id="gallery" class="gallery-section">
   <div class="container">
     <div class="section-header light">
-      <span class="section-tag" data-i18n="gallery_tag">Visual Heritage</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="gallery_tag">Visual Heritage</span>
+        <button class="read-section-btn" onclick="readSection('gallery')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="gallery_title">Photo Gallery</h2>
       <p class="section-desc" data-i18n="gallery_intro">Explore the archaeological site through photography.</p>
     </div>
-    <div class="gallery-filters" role="tablist">
+    <div class="gallery-filters" role="tablist" data-no-speech="true">
       <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
       <button class="filter-btn" data-filter="aerial" data-i18n="filter_aerial">Aerial Views</button>
       <button class="filter-btn" data-filter="patana" data-i18n="filter_patana">Patanaghara</button>
@@ -760,7 +817,13 @@
 <section id="nearby" class="nearby-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag" data-i18n="nearby_tag">සංචාරක සහ ඓතිහාසික මඟපෙන්වීම</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="nearby_tag">සංචාරක සහ ඓතිහාසික මඟපෙන්වීම</span>
+        <button class="read-section-btn" onclick="readSection('nearby')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="nearby_title">මාලිගාතැන්න අවට නැරඹිය හැකි ස්ථාන</h2>
       <p class="section-desc" data-i18n="nearby_desc">කුරුණෑගල දිස්ත්‍රික්කයේ සහ වයඹ පළාතේ මාලිගාතැන්න පුරාවිද්‍යා භූමියට ආසන්නව පිහිටි සුවිශේෂී ඓතිහාසික ආරාම, පර්වත බලකොටු හා සංස්කෘතික උරුම ස්ථාන.</p>
     </div>
@@ -913,7 +976,13 @@
 <section id="preservation" class="preservation-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag" data-i18n="pres_tag">Heritage Stewardship</span>
+      <div class="section-header-top">
+        <span class="section-tag" data-i18n="pres_tag">Heritage Stewardship</span>
+        <button class="read-section-btn" onclick="readSection('preservation')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+          <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+          <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+        </button>
+      </div>
       <h2 data-i18n="pres_title">Preserving the Heritage</h2>
       <p class="section-desc" data-i18n="pres_intro">The journey of protecting Maligathanna's archaeological legacy.</p>
     </div>
@@ -943,12 +1012,18 @@
 </section>
 
 <!-- HISTORICAL NOTE -->
-<section class="historical-note-section">
+<section id="historical-note-section" class="historical-note-section">
   <div class="container">
     <div class="historical-note reveal">
       <div class="note-icon"><i class="fas fa-book-open"></i></div>
       <div class="note-content">
-        <h3 data-i18n="note_title">Historical Accuracy Note</h3>
+        <div class="note-header-top">
+          <h3 data-i18n="note_title">Historical Accuracy Note</h3>
+          <button class="read-section-btn" onclick="readSection('historical-note-section')" aria-label="Read this section aloud" aria-pressed="false" data-no-speech="true">
+            <span class="tts-icon"><i class="fas fa-volume-high"></i></span>
+            <span class="tts-text" data-i18n="tts_read">🔊 කියවන්න</span>
+          </button>
+        </div>
         <p data-i18n="note_desc">This website presents information based on archaeological documentation. Where archaeological evidence and local tradition differ, they are clearly presented separately. Local traditions are labelled as such and are not presented as historically confirmed facts. The absence of written records at this site means interpretation relies primarily on architectural and material evidence.</p>
       </div>
     </div>
