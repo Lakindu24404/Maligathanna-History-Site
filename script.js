@@ -60,6 +60,8 @@ const translations = {
     help_card6_desc: 'ඇස්වලට පහසු <strong>අඳුරු තේමාව (Dark Mode)</strong> මාරු කර ගත හැක. ජංගම දුරකථන භාවිතයේදී පහළින් දිස්වන floating dock මඟින් ක්ෂණිකව ඕනෑම කොටසකට පිවිසිය හැක.',
     help_card7_title: '7. හඬින් කියවීමේ පහසුකම (Text-to-Speech)',
     help_card7_desc: 'සෑම ප්‍රධාන කොටසකම ඇති <strong>\'🔊 කියවන්න\'</strong> බොත්තම එබීමෙන් අදාළ ඓතිහාසික තොරතුරු ඔබ තෝරාගත් භාෂාවෙන් (සිංහල, English, தமிழ்) ශ්‍රවණය කළ හැක. කියවීම නැවැත්වීමට ඕනෑම වේලාවක <strong>\'⏹ නවත්වන්න\'</strong> ඔබන්න.',
+    help_card8_title: '8. නොබැඳි භාවිතය සහ PWA සහාය (Offline Access)',
+    help_card8_desc: 'වෙබ් අඩවිය එක් වරක් පිවිසි පසු එය ස්වයංක්‍රීයව සුරැකේ (Cached). අන්තර්ජාලය විසන්ධි වූ විට හෝ නොබැඳිව පිවිසීමේදී බ්‍රවුසරයේ දෝෂ හෝ dinosaur පිටු වෙනුවට විශේෂිත වූ <strong>නොබැඳි අත්දැකීම (Offline Experience)</strong> දිස්වේ.',
 
     /* Text-to-Speech (Read Aloud) */
     tts_read: 'කියවන්න',
@@ -337,6 +339,16 @@ const translations = {
     note_title: 'ඓතිහාසික නිරවද්‍යතා සටහන',
     note_desc: 'මෙම වෙබ් අඩවිය පුරාවිද්‍යාත්මක ලේඛනගත කිරීම් මත පදනම්ව තොරතුරු ඉදිරිපත් කරයි. පුරාවිද්‍යාත්මක සාක්ෂි සහ දේශීය ජනශ්‍රැති අතර වෙනස්කම් ඇති තැන්වල ඒවා පැහැදිලිව වෙන්කර දක්වා ඇත. ලිඛිත සාක්ෂි නොමැතිකම නිසා ස්ථානයේ ඉතිහාසය ප්‍රධාන වශයෙන් භෞතික නටබුන් සහ ගෘහ නිර්මාණ ලක්ෂණ ඔස්සේ අර්ථකථනය කෙරේ.',
 
+    /* Offline Experience */
+    offline_badge: 'සම්බන්ධතා තත්ත්වය',
+    offline_title: 'ඔබ අන්තර්ජාලයෙන් විසන්ධි වී ඇත',
+    offline_desc: 'කරුණාකර ඔබගේ අන්තර්ජාල සම්බන්ධතාවය පරීක්ෂා කර නැවත උත්සාහ කරන්න.',
+    offline_btn_retry: 'නැවත උත්සාහ කරන්න',
+    offline_tip: 'ඔබගේ Wi-Fi, ජංගම දත්ත (Mobile Data) හෝ රවුටරය ක්‍රියාත්මක දැයි පරීක්ෂා කරන්න.',
+    offline_status_checking: 'සම්බන්ධතාවය පරීක්ෂා කරමින්...',
+    offline_status_still_offline: 'තවමත් සම්බන්ධතාවය නොමැත. කරුණාකර ජාලය පරීක්ෂා කරන්න.',
+    offline_status_restored: 'සම්බන්ධතාවය නැවත ලැබුණි',
+
     /* Footer */
     footer_tagline: 'ශ්‍රී ලංකාවේ පොහොසත් පුරාවිද්‍යාත්මක උරුමය සංරක්ෂණය කරමු',
     footer_nav_title: 'ගවේෂණය කරන්න',
@@ -389,6 +401,8 @@ const translations = {
     help_card6_desc: 'Toggle eye-friendly <strong>Dark Mode</strong> with the Moon/Sun icon. On mobile phones, use the bottom floating dock to jump instantly between sections.',
     help_card7_title: '7. Multilingual Read Aloud (Text-to-Speech)',
     help_card7_desc: 'Click the <strong>\'🔊 Read\'</strong> button in any major section to listen to historical details in your chosen language (Sinhala, English, or Tamil). Click <strong>\'⏹ Stop\'</strong> anytime to pause or stop reading.',
+    help_card8_title: '8. Offline Access & PWA Support (No Internet Mode)',
+    help_card8_desc: 'Once loaded, the site is automatically cached. If your connection drops or you revisit offline, you will see a custom <strong>Animated Offline Experience</strong> instead of standard browser errors.',
 
     /* Text-to-Speech (Read Aloud) */
     tts_read: 'Read',
@@ -666,6 +680,16 @@ const translations = {
     note_title: 'Historical Accuracy Note',
     note_desc: 'This website presents information based on archaeological documentation. Where archaeological evidence and local tradition differ, they are clearly presented separately. Local traditions are labelled as such and are not presented as historically confirmed facts. The absence of written records at this site means interpretation relies primarily on architectural and material evidence.',
 
+    /* Offline Experience */
+    offline_badge: 'CONNECTION STATUS',
+    offline_title: "You're Offline",
+    offline_desc: 'Please check your internet connection and try again.',
+    offline_btn_retry: 'Try Again',
+    offline_tip: 'Make sure your Wi-Fi, mobile data, or router connection is turned on.',
+    offline_status_checking: 'Checking connection...',
+    offline_status_still_offline: 'Still offline. Please check your network.',
+    offline_status_restored: 'Connection restored',
+
     /* Footer */
     footer_tagline: 'Preserving the rich archaeological heritage of Sri Lanka',
     footer_nav_title: 'Explore',
@@ -718,6 +742,8 @@ const translations = {
     help_card6_desc: 'கண்களுக்கு வசதியான <strong>டார்க் மோடை</strong> மாற்றலாம். மொபைல் போன்களில் கீழேயுள்ள ஃப்ளோட்டிங் டாக் மூலம் எந்த பகுதிக்கும் உடனடியாக செல்லலாம்.',
     help_card7_title: '7. குரல் வழி வாசிப்பு வசதி (Text-to-Speech)',
     help_card7_desc: 'ஒவ்வொரு முக்கிய பிரிவிலும் உள்ள <strong>\'🔊 படிக்க\'</strong> பொத்தானை அழுத்தி தேர்ந்தெடுக்கப்பட்ட மொழியில் (சிங்களம், ஆங்கிலம், தமிழ்) வரலாற்றுத் தகவல்களைக் கேட்கலாம். எந்த நேரத்திலும் நிறுத்த <strong>\'⏹ நிறுத்து\'</strong> அழுத்தவும்.',
+    help_card8_title: '8. ஆஃப்லைன் அணுகல் & PWA ஆதரவு (Offline Access)',
+    help_card8_desc: 'ஒருமுறை தளம் திறக்கப்பட்டதும் அது தானாக சேமிக்கப்படும் (Cached). இணைய இணைப்பு இல்லாத நேரத்திலும் (Offline) பிரவுசர் பிழைகளுக்குப் பதிலாக எமது பிரத்யேக <strong>ஆஃப்லைன் பக்கத்துடன் (Offline Experience)</strong> தடையின்றி இயங்கும்.',
 
     /* Text-to-Speech (Read Aloud) */
     tts_read: 'படிக்க',
@@ -994,6 +1020,16 @@ const translations = {
     /* Note */
     note_title: 'வரலாற்று துல்லியம் குறிப்பு',
     note_desc: 'இந்த வலைத்தளம் தொல்பொருளியல் ஆவணங்களின் அடிப்படையில் தகவல்களை வழங்குகிறது. தொல்பொருளியல் சாட்சியங்களும் உள்ளூர் மரபும் வேறுபடும் இடத்தில், அவை தெளிவாக தனித்தனியாக வழங்கப்படுகின்றன.',
+
+    /* Offline Experience */
+    offline_badge: 'இணைப்பு நிலை',
+    offline_title: 'நீங்கள் இணையத்திலிருந்து துண்டிக்கப்பட்டுள்ளீர்கள்',
+    offline_desc: 'உங்கள் இணைய இணைப்பைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.',
+    offline_btn_retry: 'மீண்டும் முயற்சிக்கவும்',
+    offline_tip: 'உங்கள் வைஃபை (Wi-Fi), மொபைல் டேட்டா அல்லது ரூட்டர் சரியாக உள்ளதா என சரிபார்க்கவும்.',
+    offline_status_checking: 'இணைப்பைச் சரிபார்க்கிறது...',
+    offline_status_still_offline: 'இன்னும் ஆஃப்லைனில் உள்ளது. உங்கள் நெட்வொர்க்கை சரிபார்க்கவும்.',
+    offline_status_restored: 'இணைப்பு மீட்டமைக்கப்பட்டது',
 
     /* Footer */
     footer_tagline: 'இலங்கையின் செழுமையான தொல்பொருளியல் பாரம்பரியத்தை பாதுகாத்தல்',
@@ -2433,13 +2469,165 @@ window.readSection = readSection;
 window.stopSpeech = stopSpeech;
 
 /* ===================================================================
-   23. INITIALIZATION
+   23. ANIMATED OFFLINE & CONNECTION RESTORATION SYSTEM
+   =================================================================== */
+function initOfflineDetection() {
+  const offlineScreen = document.getElementById('offline-screen');
+  const retryBtn = document.getElementById('offline-retry-btn');
+  const statusMsg = document.getElementById('offline-status-msg');
+  if (!offlineScreen) return;
+
+  let isOfflineActive = false;
+  let restoreTimeout = null;
+
+  function showOfflineScreen() {
+    if (restoreTimeout) {
+      clearTimeout(restoreTimeout);
+      restoreTimeout = null;
+    }
+    isOfflineActive = true;
+    offlineScreen.classList.remove('restored', 'closing');
+    offlineScreen.style.display = 'flex';
+    offlineScreen.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('offline-active');
+
+    // Reset status message & retry button
+    if (statusMsg) {
+      statusMsg.textContent = '';
+      statusMsg.className = 'offline-status-msg';
+    }
+    if (retryBtn) {
+      retryBtn.classList.remove('checking');
+      const label = retryBtn.querySelector('.retry-label');
+      if (label) label.textContent = t('offline_btn_retry');
+      retryBtn.focus();
+    }
+  }
+
+  function handleOnlineRestoration() {
+    if (!isOfflineActive && offlineScreen.style.display === 'none') return;
+    isOfflineActive = false;
+
+    // Show restored visual state
+    offlineScreen.classList.add('restored');
+    if (statusMsg) {
+      statusMsg.className = 'offline-status-msg status-success';
+      statusMsg.innerHTML = `<i class="fas fa-circle-check"></i> <span>${t('offline_status_restored')}</span>`;
+    }
+
+    if (retryBtn) {
+      retryBtn.classList.remove('checking');
+    }
+
+    // Wait ~850ms, then smoothly fade out
+    restoreTimeout = setTimeout(() => {
+      offlineScreen.classList.add('closing');
+      setTimeout(() => {
+        offlineScreen.style.display = 'none';
+        offlineScreen.setAttribute('aria-hidden', 'true');
+        offlineScreen.classList.remove('restored', 'closing');
+        document.body.classList.remove('offline-active');
+        if (statusMsg) {
+          statusMsg.textContent = '';
+          statusMsg.className = 'offline-status-msg';
+        }
+      }, 500);
+    }, 850);
+  }
+
+  async function checkConnectivity() {
+    if (retryBtn) {
+      retryBtn.classList.add('checking');
+      const label = retryBtn.querySelector('.retry-label');
+      if (label) label.textContent = t('offline_status_checking');
+    }
+    if (statusMsg) {
+      statusMsg.className = 'offline-status-msg status-checking';
+      statusMsg.innerHTML = `<i class="fas fa-spinner fa-spin"></i> <span>${t('offline_status_checking')}</span>`;
+    }
+
+    let isConnected = false;
+
+    if (navigator.onLine) {
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2500);
+        const res = await fetch(`assets/images/facon.jpg?_t=${Date.now()}`, {
+          method: 'HEAD',
+          cache: 'no-store',
+          signal: controller.signal
+        });
+        clearTimeout(timeoutId);
+        isConnected = res.ok || res.status < 400 || res.type === 'opaque';
+      } catch (err) {
+        isConnected = navigator.onLine;
+      }
+    }
+
+    await new Promise(r => setTimeout(r, 450));
+
+    if (isConnected && navigator.onLine) {
+      handleOnlineRestoration();
+    } else {
+      if (retryBtn) {
+        retryBtn.classList.remove('checking');
+        const label = retryBtn.querySelector('.retry-label');
+        if (label) label.textContent = t('offline_btn_retry');
+      }
+      const card = offlineScreen.querySelector('.offline-card');
+      if (card) {
+        card.classList.remove('shake');
+        void card.offsetWidth;
+        card.classList.add('shake');
+        setTimeout(() => card.classList.remove('shake'), 600);
+      }
+      if (statusMsg) {
+        statusMsg.className = 'offline-status-msg status-warning';
+        statusMsg.innerHTML = `<i class="fas fa-triangle-exclamation"></i> <span>${t('offline_status_still_offline')}</span>`;
+      }
+    }
+  }
+
+  // Event Listeners for browser online/offline
+  window.addEventListener('offline', showOfflineScreen);
+  window.addEventListener('online', handleOnlineRestoration);
+
+  // Manual Retry Trigger
+  if (retryBtn) {
+    retryBtn.addEventListener('click', checkConnectivity);
+  }
+
+  // Keyboard accessibility
+  offlineScreen.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      if (retryBtn) {
+        e.preventDefault();
+        retryBtn.focus();
+      }
+    }
+  });
+
+  // Check initial state
+  if (!navigator.onLine) {
+    showOfflineScreen();
+  }
+
+  // Expose test helpers for debugging or dev
+  window.testOfflineScreen = showOfflineScreen;
+  window.testOnlineRestoration = handleOnlineRestoration;
+}
+
+/* ===================================================================
+   24. INITIALIZATION
    =================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   // Theme & Language
   initTheme();
   applyTranslations();
   initSpeechVoices();
+
+  // Offline detection & restoration
+  initOfflineDetection();
 
   // Preloader & Welcome Experience
   initPreloader();
@@ -2471,6 +2659,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('Maligathanna Heritage Site loaded with authentic heritage welcome, preloader, mobile dock & multilingual TTS.');
 });
+
+// Service Worker Registration for Offline Caching & PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then((reg) => {
+        console.log('[SW] Service Worker active with scope:', reg.scope);
+      })
+      .catch((err) => {
+        console.log('[SW] Note: Service Worker requires http/https local server or host:', err.message);
+      });
+  });
+}
 
 
 // curosr

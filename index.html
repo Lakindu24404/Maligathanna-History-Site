@@ -12,10 +12,104 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="shortcut icon" href="assets/images/facon.jpg" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#6B4F2A" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </head>
 <body>
 <!-- Cursor -->
- <div class="custom-cursor"></div>
+<div class="custom-cursor"></div>
+
+<!-- OFFLINE / NO CONNECTION EXPERIENCE -->
+<div id="offline-screen" class="offline-screen" role="alertdialog" aria-modal="true" aria-labelledby="offline-title" aria-describedby="offline-desc" aria-hidden="true" style="display:none;">
+  <div class="offline-backdrop">
+    <div class="offline-glow-orb orb-primary"></div>
+    <div class="offline-glow-orb orb-secondary"></div>
+    <div class="offline-grid-lines" aria-hidden="true"></div>
+    <div class="offline-particles" aria-hidden="true">
+      <span class="offline-particle p1"></span>
+      <span class="offline-particle p2"></span>
+      <span class="offline-particle p3"></span>
+      <span class="offline-particle p4"></span>
+      <span class="offline-particle p5"></span>
+      <span class="offline-particle p6"></span>
+    </div>
+  </div>
+
+  <div class="offline-container">
+    <div class="offline-card">
+      <!-- Status Badge -->
+      <div class="offline-badge-wrap">
+        <div class="offline-badge">
+          <span class="offline-status-dot"></span>
+          <span class="offline-badge-text" data-i18n="offline_badge">CONNECTION STATUS</span>
+        </div>
+      </div>
+
+      <!-- Animated Disconnected Network Visual -->
+      <div class="offline-visual" aria-hidden="true">
+        <div class="offline-radar-ring ring-outer"></div>
+        <div class="offline-radar-ring ring-mid"></div>
+        <div class="offline-radar-ring ring-inner"></div>
+
+        <svg class="offline-network-svg" viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Connection Waves -->
+          <path class="net-wave wave-3" d="M 45 90 A 85 85 0 0 1 215 90" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 6"/>
+          <path class="net-wave wave-2" d="M 72 106 A 58 58 0 0 1 188 106" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path class="net-wave wave-1" d="M 98 122 A 32 32 0 0 1 162 122" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+
+          <!-- Network Lines and Satellite Nodes -->
+          <line class="net-line line-left" x1="40" y1="130" x2="105" y2="150" stroke="currentColor" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6"/>
+          <line class="net-line line-right" x1="220" y1="130" x2="155" y2="150" stroke="currentColor" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.6"/>
+          
+          <circle class="net-node node-1" cx="40" cy="130" r="6" fill="currentColor" opacity="0.8"/>
+          <circle class="net-node node-2" cx="220" cy="130" r="6" fill="currentColor" opacity="0.8"/>
+          <circle class="net-node node-top" cx="130" cy="35" r="5" fill="currentColor" opacity="0.6"/>
+
+          <!-- Disconnect Break Effect / Sparks -->
+          <line class="net-break-slash" x1="60" y1="160" x2="200" y2="50" stroke="#E06D53" stroke-width="3" stroke-linecap="round"/>
+
+          <!-- Core Beacon Base -->
+          <circle class="beacon-halo" cx="130" cy="150" r="28" fill="currentColor" opacity="0.08"/>
+          <circle class="beacon-outer" cx="130" cy="150" r="16" fill="currentColor" opacity="0.25"/>
+          <circle class="beacon-core" cx="130" cy="150" r="8" fill="currentColor"/>
+        </svg>
+
+        <!-- Floating Central Icon with Dynamic Pulse -->
+        <div class="offline-icon-emblem">
+          <i class="fas fa-wifi-slash icon-offline"></i>
+          <i class="fas fa-check icon-restored"></i>
+          <span class="offline-emblem-aura"></span>
+        </div>
+      </div>
+
+      <!-- Main Message Details -->
+      <div class="offline-content">
+        <h2 id="offline-title" class="offline-title" data-i18n="offline_title">You're Offline</h2>
+        <p id="offline-desc" class="offline-desc" data-i18n="offline_desc">Please check your internet connection and try again.</p>
+        <p class="offline-tip" data-i18n="offline_tip">Make sure your Wi-Fi, mobile data, or router connection is turned on.</p>
+      </div>
+
+      <!-- Manual Action Control -->
+      <div class="offline-actions">
+        <button id="offline-retry-btn" class="offline-retry-btn" type="button" aria-label="Retry connection">
+          <span class="retry-icon-wrap"><i class="fas fa-rotate-right"></i></span>
+          <span class="retry-label" data-i18n="offline_btn_retry">Try Again</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Live Status Banner -->
+      <div id="offline-status-msg" class="offline-status-msg" aria-live="polite"></div>
+
+      <!-- Heritage Branding Touch -->
+      <div class="offline-footer">
+        <i class="fas fa-landmark"></i>
+        <span>මාලිගාතැන්න · MALIGATHANNA HERITAGE</span>
+      </div>
+    </div>
+  </div>
+</div>
  
 <!-- PRELOADER -->
 <div id="site-preloader" class="site-preloader" aria-hidden="true">
@@ -259,6 +353,17 @@
           <div class="help-card-content">
             <h4 data-i18n="help_card7_title">7. හඬින් කියවීමේ පහසුකම (Text-to-Speech)</h4>
             <p data-i18n="help_card7_desc">සෑම ප්‍රධාන කොටසකම ඇති <strong>'🔊 කියවන්න'</strong> බොත්තම එබීමෙන් අදාළ ඓතිහාසික තොරතුරු ඔබ තෝරාගත් භාෂාවෙන් (සිංහල, English, தமிழ்) ශ්‍රවණය කළ හැක. කියවීම නැවැත්වීමට ඕනෑම වේලාවක <strong>'⏹ නවත්වන්න'</strong> ඔබන්න.</p>
+          </div>
+        </div>
+
+        <!-- Card 8: Offline Access & PWA Support -->
+        <div class="help-card">
+          <div class="help-card-icon">
+            <i class="fas fa-tower-broadcast"></i>
+          </div>
+          <div class="help-card-content">
+            <h4 data-i18n="help_card8_title">8. නොබැඳි භාවිතය සහ PWA සහාය (Offline Access)</h4>
+            <p data-i18n="help_card8_desc">වෙබ් අඩවිය එක් වරක් පිවිසි පසු එය ස්වයංක්‍රීයව සුරැකේ (Cached). අන්තර්ජාලය විසන්ධි වූ විට හෝ නොබැඳිව පිවිසීමේදී බ්‍රවුසරයේ දෝෂ හෝ dinosaur පිටු වෙනුවට විශේෂිත වූ <strong>නොබැඳි අත්දැකීම (Offline Experience)</strong> දිස්වේ.</p>
           </div>
         </div>
 
