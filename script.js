@@ -1788,11 +1788,10 @@ function initHelpModal() {
 
 /* ===================================================================
    22. MULTILINGUAL TEXT-TO-SPEECH (READ ALOUD) ENGINE
-   Authentic natural audio speech for Sinhala (si), Tamil (ta), and English (en)
+   High-accuracy Sinhala, Tamil, and English pronunciation engine
    =================================================================== */
 let activeSpeechSectionId = null;
 let isSpeaking = false;
-let currentAudio = null;
 let speechSessionToken = 0;
 let availableVoices = [];
 
@@ -1809,31 +1808,187 @@ function initSpeechVoices() {
   }
 }
 
-// Find a matching voice for language, return null if no real voice exists
-function getNativeVoiceForLanguage(lang) {
+// Convert Sinhala Unicode into authentic phonetic speech for speech synthesis
+function sinhalaToSpeechPhonetic(text) {
+  if (!text) return '';
+  let clean = text.replace(/[\u200B-\u200D\uFEFF]/g, '');
+
+  const vowels = {
+    'අ': 'a', 'ආ': 'aa', 'ඇ': 'ae', 'ඈ': 'aae', 'ඉ': 'i', 'ඊ': 'ee',
+    'උ': 'u', 'ඌ': 'oo', 'ඍ': 'ru', 'ඎ': 'roo', 'ඏ': 'lu', 'ඐ': 'loo',
+    'එ': 'e', 'ඒ': 'ey', 'ඓ': 'ai', 'ඔ': 'o', 'ඕ': 'oh', 'ඖ': 'au'
+  };
+
+  const consonants = {
+    'ක': 'ka', 'ඛ': 'kha', 'ග': 'ga', 'ඝ': 'gha', 'ඞ': 'nga', 'ඟ': 'nga',
+    'ච': 'cha', 'ඡ': 'chha', 'ජ': 'ja', 'ඣ': 'jha', 'ඤ': 'nya', 'ඥ': 'gnya', 'ඦ': 'nja',
+    'ට': 'ta', 'ඨ': 'tha', 'ඩ': 'da', 'ඪ': 'dha', 'ණ': 'na', 'ඬ': 'nda',
+    'ත': 'tha', 'ථ': 'thha', 'ද': 'dha', 'ධ': 'dhha', 'න': 'na', 'ඳ': 'nda',
+    'ප': 'pa', 'ඵ': 'pha', 'බ': 'ba', 'භ': 'bha', 'ම': 'ma', 'ඹ': 'mba',
+    'ය': 'ya', 'ර': 'ra', 'ල': 'la', 'ව': 'va',
+    'ශ': 'sha', 'ෂ': 'sha', 'ස': 'sa', 'හ': 'ha', 'ළ': 'la', 'ෆ': 'fa'
+  };
+
+  const pili = {
+    '්': '',       // Hal / Virama
+    'ා': 'aa',
+    'ැ': 'ae',
+    'ෑ': 'aae',
+    'ි': 'i',
+    'ී': 'ee',
+    'ු': 'u',
+    'ූ': 'oo',
+    'ෘ': 'ru',
+    'ෲ': 'roo',
+    'ෟ': 'lu',
+    'ෳ': 'loo',
+    'ෙ': 'e',
+    'ේ': 'ey',
+    'ෛ': 'ai',
+    'ො': 'o',
+    'ෝ': 'oh',
+    'ෞ': 'au',
+    'ං': 'ng',
+    'ඃ': 'h'
+  };
+
+  let out = '';
+  const len = clean.length;
+
+  for (let i = 0; i < len; i++) {
+    const ch = clean[i];
+    const nxt = (i + 1 < len) ? clean[i + 1] : '';
+
+    if (vowels[ch]) {
+      out += vowels[ch];
+    } else if (consonants[ch]) {
+      const base = consonants[ch].slice(0, -1);
+      if (pili[nxt] !== undefined) {
+        out += base + pili[nxt];
+        i++;
+      } else {
+        out += consonants[ch];
+      }
+    } else if (pili[ch] !== undefined) {
+      out += pili[ch];
+    } else {
+      out += ch;
+    }
+  }
+
+  // Refine common phonetic transitions
+  return out
+    .replace(/thh/g, 'th')
+    .replace(/dhh/g, 'dh')
+    .replace(/aeae/g, 'ae')
+    .replace(/aaaa/g, 'aa')
+    .replace(/sng/g, 'sang')
+    .replace(/chng/g, 'chang')
+    .replace(/rng/g, 'ran')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Convert Tamil Unicode into authentic phonetic speech for speech synthesis
+function tamilToSpeechPhonetic(text) {
+  if (!text) return '';
+  let clean = text.replace(/[\u200B-\u200D\uFEFF]/g, '');
+
+  const vowels = {
+    'அ': 'a', 'ஆ': 'aa', 'இ': 'i', 'ஈ': 'ee', 'உ': 'u', 'ஊ': 'oo',
+    'எ': 'e', 'ஏ': 'ey', 'ஐ': 'ai', 'ஒ': 'o', 'ஓ': 'oh', 'ஔ': 'au'
+  };
+
+  const consonants = {
+    'க': 'ka', 'ங': 'nga', 'ச': 'cha', 'ஞ': 'nya', 'ட': 'ta', 'ண': 'na',
+    'த': 'tha', 'ந': 'na', 'ப': 'pa', 'ம': 'ma', 'ய': 'ya', 'ர': 'ra',
+    'ல': 'la', 'வ': 'va', 'ழ': 'zha', 'ள': 'la', 'ற': 'ra', 'ன': 'na',
+    'ஜ': 'ja', 'ஷ': 'sha', 'ஸ': 'sa', 'ஹ': 'ha'
+  };
+
+  const pili = {
+    '்': '',
+    'ா': 'aa',
+    'ி': 'i',
+    'ீ': 'ee',
+    'ு': 'u',
+    'ூ': 'oo',
+    'ெ': 'e',
+    'ே': 'ey',
+    'ை': 'ai',
+    'ொ': 'o',
+    'ோ': 'oh',
+    'ௌ': 'au'
+  };
+
+  let out = '';
+  const len = clean.length;
+
+  for (let i = 0; i < len; i++) {
+    const ch = clean[i];
+    const nxt = (i + 1 < len) ? clean[i + 1] : '';
+
+    if (vowels[ch]) {
+      out += vowels[ch];
+    } else if (consonants[ch]) {
+      const base = consonants[ch].slice(0, -1);
+      if (pili[nxt] !== undefined) {
+        out += base + pili[nxt];
+        i++;
+      } else {
+        out += consonants[ch];
+      }
+    } else if (pili[ch] !== undefined) {
+      out += pili[ch];
+    } else {
+      out += ch;
+    }
+  }
+
+  return out.replace(/\s+/g, ' ').trim();
+}
+
+// Find optimal voice for requested language
+function getBestVoiceForLanguage(lang) {
   if (!availableVoices.length && 'speechSynthesis' in window) {
     availableVoices = window.speechSynthesis.getVoices() || [];
   }
-  const langTargets = {
-    si: ['si-LK', 'si', 'sin', 'sinhala'],
-    ta: ['ta-LK', 'ta-IN', 'ta', 'tam', 'tamil'],
-    en: ['en-US', 'en-GB', 'en-AU', 'en-IN', 'en']
-  };
-  const targets = langTargets[lang] || ['en-US', 'en'];
 
-  for (const t of targets) {
-    const match = availableVoices.find(v => v.lang && v.lang.toLowerCase().replace('_', '-') === t.toLowerCase());
-    if (match) return match;
+  if (lang === 'si') {
+    // 1. Genuine Sinhala voice if installed
+    const trueSi = availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith('si'));
+    if (trueSi) return { voice: trueSi, isNative: true };
+
+    // 2. Indic voice (Hindi, Indian English, Tamil) for rich South Asian phonetics
+    const indic = availableVoices.find(v => v.lang && (v.lang.toLowerCase().includes('in') || v.lang.toLowerCase().includes('hi')));
+    if (indic) return { voice: indic, isNative: false };
+
+    // 3. Clear natural English voice (UK, US, Natural)
+    const naturalEn = availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Zira') || v.name.includes('Jenny') || v.name.includes('David')));
+    if (naturalEn) return { voice: naturalEn, isNative: false };
+
+    const fallbackEn = availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+    return { voice: fallbackEn || availableVoices[0] || null, isNative: false };
   }
-  for (const t of targets) {
-    const match = availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith(t.toLowerCase()));
-    if (match) return match;
+
+  if (lang === 'ta') {
+    const trueTa = availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith('ta'));
+    if (trueTa) return { voice: trueTa, isNative: true };
+
+    const indic = availableVoices.find(v => v.lang && (v.lang.toLowerCase().includes('in') || v.lang.toLowerCase().includes('hi')));
+    if (indic) return { voice: indic, isNative: false };
+
+    const fallbackEn = availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+    return { voice: fallbackEn || availableVoices[0] || null, isNative: false };
   }
-  for (const t of targets) {
-    const match = availableVoices.find(v => v.name && v.name.toLowerCase().includes(t.toLowerCase()));
-    if (match) return match;
-  }
-  return null;
+
+  // English
+  const englishVoice = availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Zira') || v.name.includes('Jenny') || v.name.includes('David')))
+    || availableVoices.find(v => v.lang && v.lang.toLowerCase().startsWith('en'))
+    || availableVoices[0]
+    || null;
+
+  return { voice: englishVoice, isNative: true };
 }
 
 // Extract clean readable text from section DOM
@@ -1906,7 +2061,7 @@ function extractSectionReadableText(sectionEl) {
   return uniqueBlocks.join(' ');
 }
 
-// Split into reliable sentence chunks (< 130 characters) for optimal natural pronunciation
+// Split into reliable sentence chunks (< 160 characters)
 function chunkText(text) {
   if (!text) return [];
   const rawPieces = text.split(/([.!?\n\u0DF4\u0D83]+)/);
@@ -1920,13 +2075,13 @@ function chunkText(text) {
 
   const chunks = [];
   sentences.forEach(s => {
-    if (s.length <= 130) {
+    if (s.length <= 160) {
       chunks.push(s);
     } else {
       const words = s.split(' ');
       let current = '';
       words.forEach(w => {
-        if ((current + ' ' + w).length <= 130) {
+        if ((current + ' ' + w).length <= 160) {
           current = current ? (current + ' ' + w) : w;
         } else {
           if (current) chunks.push(current);
@@ -1942,6 +2097,11 @@ function chunkText(text) {
 
 // Main Section Read Aloud Controller
 function readSection(sectionId) {
+  if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+    alertToast(t('tts_not_supported'));
+    return;
+  }
+
   // If clicking active section -> stop reading
   if (isSpeaking && activeSpeechSectionId === sectionId) {
     stopSpeech();
@@ -1954,10 +2114,10 @@ function readSection(sectionId) {
   const sectionEl = document.getElementById(sectionId);
   if (!sectionEl) return;
 
-  const textToRead = extractSectionReadableText(sectionEl);
-  if (!textToRead) return;
+  const rawTextToRead = extractSectionReadableText(sectionEl);
+  if (!rawTextToRead) return;
 
-  const chunks = chunkText(textToRead);
+  const chunks = chunkText(rawTextToRead);
   if (!chunks.length) return;
 
   activeSpeechSectionId = sectionId;
@@ -1966,11 +2126,10 @@ function readSection(sectionId) {
   const sessionToken = speechSessionToken;
   updateSectionReadButtonState(sectionId, true);
 
+  const voiceConfig = getBestVoiceForLanguage(currentLang);
   let chunkIdx = 0;
-  const langCode = currentLang === 'si' ? 'si' : (currentLang === 'ta' ? 'ta' : 'en');
-  const nativeVoice = getNativeVoiceForLanguage(currentLang);
 
-  function playNextChunk() {
+  function speakNextChunk() {
     if (sessionToken !== speechSessionToken || !isSpeaking) return;
 
     if (chunkIdx >= chunks.length) {
@@ -1979,90 +2138,55 @@ function readSection(sectionId) {
     }
 
     const chunk = chunks[chunkIdx];
+    let spokenText = chunk;
 
-    // If English and genuine native voice exists, use Web Speech API
-    if (currentLang === 'en' && nativeVoice && 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window) {
-      const utterance = new SpeechSynthesisUtterance(chunk);
-      utterance.lang = 'en-US';
-      utterance.voice = nativeVoice;
-      utterance.rate = 0.95;
-      utterance.pitch = 1.0;
-
-      utterance.onend = () => {
-        if (sessionToken !== speechSessionToken) return;
-        chunkIdx++;
-        playNextChunk();
-      };
-
-      utterance.onerror = (e) => {
-        if (sessionToken !== speechSessionToken) return;
-        if (e.error === 'canceled' || e.error === 'interrupted') return;
-        chunkIdx++;
-        playNextChunk();
-      };
-
-      window.speechSynthesis.speak(utterance);
-    } else {
-      // Authentic Natural Sinhala (si), Tamil (ta), and fallback English (en)
-      const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${langCode}&q=${encodeURIComponent(chunk)}`;
-      const audio = new Audio();
-      currentAudio = audio;
-      audio.src = audioUrl;
-
-      audio.onended = () => {
-        if (sessionToken !== speechSessionToken) return;
-        chunkIdx++;
-        playNextChunk();
-      };
-
-      audio.onerror = (err) => {
-        if (sessionToken !== speechSessionToken) return;
-        console.warn('Audio stream error, attempting SpeechSynthesis:', err);
-        if ('speechSynthesis' in window && 'SpeechSynthesisUtterance' in window) {
-          const fallbackUtterance = new SpeechSynthesisUtterance(chunk);
-          fallbackUtterance.lang = langCode === 'si' ? 'si-LK' : (langCode === 'ta' ? 'ta-LK' : 'en-US');
-          fallbackUtterance.onend = () => {
-            if (sessionToken !== speechSessionToken) return;
-            chunkIdx++;
-            playNextChunk();
-          };
-          fallbackUtterance.onerror = () => {
-            if (sessionToken !== speechSessionToken) return;
-            chunkIdx++;
-            playNextChunk();
-          };
-          window.speechSynthesis.speak(fallbackUtterance);
-        } else {
-          chunkIdx++;
-          playNextChunk();
-        }
-      };
-
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(e => {
-          if (sessionToken !== speechSessionToken) return;
-          console.warn('Audio playback error:', e);
-          chunkIdx++;
-          playNextChunk();
-        });
-      }
+    // Apply accurate phonetic pronunciation if native voice is missing
+    if (currentLang === 'si') {
+      spokenText = voiceConfig.isNative ? chunk : sinhalaToSpeechPhonetic(chunk);
+    } else if (currentLang === 'ta') {
+      spokenText = voiceConfig.isNative ? chunk : tamilToSpeechPhonetic(chunk);
     }
+
+    const utterance = new SpeechSynthesisUtterance(spokenText);
+
+    if (voiceConfig.voice) {
+      utterance.voice = voiceConfig.voice;
+      utterance.lang = voiceConfig.voice.lang || (currentLang === 'si' ? 'en-US' : (currentLang === 'ta' ? 'ta-LK' : 'en-US'));
+    }
+
+    // Natural reading cadence
+    if (currentLang === 'si' || currentLang === 'ta') {
+      utterance.rate = voiceConfig.isNative ? 0.92 : 0.86;
+      utterance.pitch = 1.0;
+    } else {
+      utterance.rate = 0.96;
+      utterance.pitch = 1.0;
+    }
+
+    utterance.onend = () => {
+      if (sessionToken !== speechSessionToken) return;
+      chunkIdx++;
+      speakNextChunk();
+    };
+
+    utterance.onerror = (e) => {
+      if (sessionToken !== speechSessionToken) return;
+      if (e.error === 'canceled' || e.error === 'interrupted') return;
+      console.warn('SpeechSynthesis chunk error:', e);
+      chunkIdx++;
+      speakNextChunk();
+    };
+
+    window.speechSynthesis.speak(utterance);
   }
 
-  playNextChunk();
+  window.speechSynthesis.cancel();
+  speakNextChunk();
 }
 
 // Stop speech and reset state
 function stopSpeech() {
   speechSessionToken++;
-  if (currentAudio) {
-    try {
-      currentAudio.pause();
-      currentAudio.src = '';
-    } catch(e) {}
-    currentAudio = null;
-  }
   if ('speechSynthesis' in window) {
     try {
       window.speechSynthesis.cancel();
