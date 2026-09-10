@@ -2061,10 +2061,11 @@ function extractSectionReadableText(sectionEl) {
   return uniqueBlocks.join(' ');
 }
 
-// Split into reliable sentence chunks (< 160 characters)
+// Split text into coherent, natural phrases/sentences (< 130 characters)
 function chunkText(text) {
   if (!text) return [];
-  const rawPieces = text.split(/([.!?\n\u0DF4\u0D83]+)/);
+  // Split on primary sentence terminators
+  const rawPieces = text.split(/([.!?\n\u0DF4\u0D83;—–]+)/);
   const sentences = [];
   for (let i = 0; i < rawPieces.length; i += 2) {
     const textPart = rawPieces[i] || '';
@@ -2075,33 +2076,177 @@ function chunkText(text) {
 
   const chunks = [];
   sentences.forEach(s => {
-    if (s.length <= 160) {
+    if (s.length <= 130) {
       chunks.push(s);
     } else {
-      const words = s.split(' ');
-      let current = '';
-      words.forEach(w => {
-        if ((current + ' ' + w).length <= 160) {
-          current = current ? (current + ' ' + w) : w;
+      // Split on comma or pause punctuation
+      const subParts = s.split(/([,:]+)/);
+      let temp = '';
+      for (let j = 0; j < subParts.length; j += 2) {
+        const sub = ((subParts[j] || '') + (subParts[j + 1] || '')).trim();
+        if ((temp + ' ' + sub).length <= 130) {
+          temp = temp ? (temp + ' ' + sub) : sub;
         } else {
-          if (current) chunks.push(current);
-          current = w;
+          if (temp) chunks.push(temp);
+          temp = sub;
         }
-      });
-      if (current) chunks.push(current);
+      }
+      if (temp) {
+        if (temp.length <= 130) {
+          chunks.push(temp);
+        } else {
+          const words = temp.split(' ');
+          let current = '';
+          words.forEach(w => {
+            if ((current + ' ' + w).length <= 130) {
+              current = current ? (current + ' ' + w) : w;
+            } else {
+              if (current) chunks.push(current);
+              current = w;
+            }
+          });
+          if (current) chunks.push(current);
+        }
+      }
     }
   });
 
   return chunks.filter(c => c && c.trim().length > 0);
 }
 
-// Main Section Read Aloud Controller
-function readSection(sectionId) {
+// Audio player references
+let currentSpeechAudio = null;
+let nextSpeechAudio = null;
+
+// Stream authentic native audio chunks (Sinhala, Tamil, English)
+function playAudioQueue(chunks, lang, sessionToken) {
+  let idx = 0;
+
+  function getAudioUrl(text) {
+    const encoded = encodeURIComponent(text);
+    return `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=${lang}&q=${encoded}`;
+  }
+
+  function preloadNext(nextIdx) {
+    if (nextIdx < chunks.length && sessionToken === speechSessionToken) {
+      try {
+        nextSpeechAudio = new Audio(getAudioUrl(chunks[nextIdx]));
+        nextSpeechAudio.preload = 'auto';
+      } catch(e) {
+        nextSpeechAudio = null;
+      }
+    } else {
+      nextSpeechAudio = null;
+    }
+  }
+
+  function playCurrentChunk() {
+    if (sessionToken !== speechSessionToken || !isSpeaking) return;
+    if (idx >= chunks.length) {
+      stopSpeech();
+      return;
+    }
+
+    const text = chunks[idx];
+
+    // Clean previous audio
+    if (currentSpeechAudio) {
+      try {
+        currentSpeechAudio.pause();
+        currentSpeechAudio.src = '';
+      } catch(e) {}
+    }
+
+    if (nextSpeechAudio && idx > 0) {
+      currentSpeechAudio = nextSpeechAudio;
+    } else {
+      currentSpeechAudio = new Audio(getAudioUrl(text));
+    }
+
+    // Preload following chunk immediately for zero latency
+    preloadNext(idx + 1);
+
+    currentSpeechAudio.onended = () => {
+      if (sessionToken !== speechSessionToken) return;
+      idx++;
+      playCurrentChunk();
+    };
+
+    currentSpeechAudio.onerror = (e) => {
+      console.warn('Audio streaming encountered error, switching to SpeechSynthesis fallback:', e);
+      speakViaSpeechSynthesis(chunks.slice(idx), lang, sessionToken);
+    };
+
+    const playPromise = currentSpeechAudio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((err) => {
+        console.warn('Audio playback prevented, switching to SpeechSynthesis fallback:', err);
+        speakViaSpeechSynthesis(chunks.slice(idx), lang, sessionToken);
+      });
+    }
+  }
+
+  playCurrentChunk();
+}
+
+// SpeechSynthesis Fallback Engine (Offline or Web Speech API)
+function speakViaSpeechSynthesis(remainingChunks, lang, sessionToken) {
   if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
-    alertToast(t('tts_not_supported'));
+    stopSpeech();
     return;
   }
 
+  const voiceConfig = getBestVoiceForLanguage(lang);
+  let chunkIdx = 0;
+
+  function speakNext() {
+    if (sessionToken !== speechSessionToken || !isSpeaking) return;
+    if (chunkIdx >= remainingChunks.length) {
+      stopSpeech();
+      return;
+    }
+
+    const chunk = remainingChunks[chunkIdx];
+    let spokenText = chunk;
+
+    if (lang === 'si') {
+      spokenText = voiceConfig.isNative ? chunk : sinhalaToSpeechPhonetic(chunk);
+    } else if (lang === 'ta') {
+      spokenText = voiceConfig.isNative ? chunk : tamilToSpeechPhonetic(chunk);
+    }
+
+    const utterance = new SpeechSynthesisUtterance(spokenText);
+
+    if (voiceConfig.voice) {
+      utterance.voice = voiceConfig.voice;
+      utterance.lang = voiceConfig.voice.lang || (lang === 'si' ? 'en-US' : (lang === 'ta' ? 'ta-LK' : 'en-US'));
+    }
+
+    utterance.rate = (lang === 'si' || lang === 'ta') ? 0.88 : 0.96;
+    utterance.pitch = 1.0;
+
+    utterance.onend = () => {
+      if (sessionToken !== speechSessionToken) return;
+      chunkIdx++;
+      speakNext();
+    };
+
+    utterance.onerror = (e) => {
+      if (sessionToken !== speechSessionToken) return;
+      if (e.error === 'canceled' || e.error === 'interrupted') return;
+      chunkIdx++;
+      speakNext();
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  window.speechSynthesis.cancel();
+  speakNext();
+}
+
+// Main Section Read Aloud Controller
+function readSection(sectionId) {
   // If clicking active section -> stop reading
   if (isSpeaking && activeSpeechSectionId === sectionId) {
     stopSpeech();
@@ -2126,67 +2271,27 @@ function readSection(sectionId) {
   const sessionToken = speechSessionToken;
   updateSectionReadButtonState(sectionId, true);
 
-  const voiceConfig = getBestVoiceForLanguage(currentLang);
-  let chunkIdx = 0;
-
-  function speakNextChunk() {
-    if (sessionToken !== speechSessionToken || !isSpeaking) return;
-
-    if (chunkIdx >= chunks.length) {
-      stopSpeech();
-      return;
-    }
-
-    const chunk = chunks[chunkIdx];
-    let spokenText = chunk;
-
-    // Apply accurate phonetic pronunciation if native voice is missing
-    if (currentLang === 'si') {
-      spokenText = voiceConfig.isNative ? chunk : sinhalaToSpeechPhonetic(chunk);
-    } else if (currentLang === 'ta') {
-      spokenText = voiceConfig.isNative ? chunk : tamilToSpeechPhonetic(chunk);
-    }
-
-    const utterance = new SpeechSynthesisUtterance(spokenText);
-
-    if (voiceConfig.voice) {
-      utterance.voice = voiceConfig.voice;
-      utterance.lang = voiceConfig.voice.lang || (currentLang === 'si' ? 'en-US' : (currentLang === 'ta' ? 'ta-LK' : 'en-US'));
-    }
-
-    // Natural reading cadence
-    if (currentLang === 'si' || currentLang === 'ta') {
-      utterance.rate = voiceConfig.isNative ? 0.92 : 0.86;
-      utterance.pitch = 1.0;
-    } else {
-      utterance.rate = 0.96;
-      utterance.pitch = 1.0;
-    }
-
-    utterance.onend = () => {
-      if (sessionToken !== speechSessionToken) return;
-      chunkIdx++;
-      speakNextChunk();
-    };
-
-    utterance.onerror = (e) => {
-      if (sessionToken !== speechSessionToken) return;
-      if (e.error === 'canceled' || e.error === 'interrupted') return;
-      console.warn('SpeechSynthesis chunk error:', e);
-      chunkIdx++;
-      speakNextChunk();
-    };
-
-    window.speechSynthesis.speak(utterance);
-  }
-
-  window.speechSynthesis.cancel();
-  speakNextChunk();
+  // Play authentic native audio stream with automatic SpeechSynthesis fallback
+  playAudioQueue(chunks, currentLang, sessionToken);
 }
 
 // Stop speech and reset state
 function stopSpeech() {
   speechSessionToken++;
+  if (currentSpeechAudio) {
+    try {
+      currentSpeechAudio.pause();
+      currentSpeechAudio.currentTime = 0;
+      currentSpeechAudio.src = '';
+    } catch(e) {}
+    currentSpeechAudio = null;
+  }
+  if (nextSpeechAudio) {
+    try {
+      nextSpeechAudio.src = '';
+    } catch(e) {}
+    nextSpeechAudio = null;
+  }
   if ('speechSynthesis' in window) {
     try {
       window.speechSynthesis.cancel();
