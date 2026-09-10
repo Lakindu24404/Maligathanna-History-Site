@@ -1524,6 +1524,9 @@ function closeLightbox() {
   }
 }
 
+
+
+
 function updateLightbox() {
   if (visibleImages.length === 0) return;
   const item = visibleImages[lightboxIndex];
@@ -1991,7 +1994,41 @@ function getBestVoiceForLanguage(lang) {
   return { voice: englishVoice, isNative: true };
 }
 
-// Extract clean readable text from section DOM
+// Clean and format text for natural, polished multilingual narration
+function cleanTextForSpeech(text, lang) {
+  if (!text) return '';
+  let s = text;
+
+  // 1. Expand technical units and abbreviations for natural pronunciation
+  if (lang === 'si') {
+    s = s.replace(/(\d+)\s*(?:km|කි\.?මී\.?)/gi, 'කිලෝමීටර් $1 ');
+    s = s.replace(/(\d+)\s*(?:m|මී\.?)/gi, 'මීටර් $1 ');
+    s = s.replace(/GN Division No\.\s*369/gi, 'අංක 369 රාවා ඇල ග්‍රාම නිලධාරී වසම');
+    s = s.replace(/No\.\s*(\d+)/gi, 'අංක $1');
+  } else if (lang === 'ta') {
+    s = s.replace(/(\d+)\s*(?:km|கி\.?மீ\.?)/gi, '$1 கிலோமீட்டர் ');
+    s = s.replace(/(\d+)\s*(?:m|மீ\.?)/gi, '$1 மீட்டர் ');
+  }
+
+  // 2. Strip English subtitles inside parentheses when reading in Sinhala or Tamil
+  if (lang === 'si' || lang === 'ta') {
+    s = s.replace(/\([A-Za-z\s\-–—,./]{3,}\)/g, ' ');
+  }
+
+  // 3. Strip UI navigation arrows, bullets, and glyphs
+  s = s.replace(/[→←↑↓•·|✓★■◆▲▼]/g, ' ');
+
+  // 4. Clean brackets & quote marks into clean natural pauses
+  s = s.replace(/[()[\]{}"'“”‘’]/g, ' ');
+
+  // 5. Clean punctuation and duplicate spacing
+  s = s.replace(/([.!?\u0DF4\u0D83;])\s*([.!?\u0DF4\u0D83;])+/g, '$1');
+  s = s.replace(/\s+/g, ' ').trim();
+
+  return s;
+}
+
+// Extract clean readable text from section DOM without duplicate nesting
 function extractSectionReadableText(sectionEl) {
   if (!sectionEl) return '';
 
@@ -2027,30 +2064,41 @@ function extractSectionReadableText(sectionEl) {
     clone.querySelectorAll(sel).forEach(el => el.remove());
   });
 
+  // Remove language-mismatched sub-titles (e.g. English subtitles inside Sinhala hero)
+  if (currentLang === 'si') {
+    clone.querySelectorAll('.sub-lang.en, .sub-lang.ta, .en-only, .ta-only').forEach(el => el.remove());
+  } else if (currentLang === 'ta') {
+    clone.querySelectorAll('.sub-lang.en, .sub-lang.si, .en-only, .si-only').forEach(el => el.remove());
+  } else if (currentLang === 'en') {
+    clone.querySelectorAll('.sub-lang.si, .sub-lang.ta, .si-only, .ta-only').forEach(el => el.remove());
+  }
+
   const blocks = [];
+  // Select only LEAF textual elements to prevent reading container cards twice
   const textElements = clone.querySelectorAll(
-    'h1, h2, h3, h4, h5, h6, p, .section-desc, .admin-item, .route-step, .glance-card, .remain-card, .feat-card, .tl-item, .nearby-card-body, .dyk-card, .note-content, .arch-feature, .diag-box, .hero-subtitle, .hero-desc'
+    'h1, h2, h3, h4, h5, h6, p, li, .section-desc, .admin-val, .route-dest, .route-road, .tl-desc, .dyk-text, .note-content'
   );
 
   if (textElements.length > 0) {
     textElements.forEach(el => {
-      if (el.closest('.route-steps') && !el.classList.contains('route-step')) return;
+      // Skip if this element contains another selected text element
+      if (el.querySelector('h1, h2, h3, h4, h5, h6, p, li')) return;
       const text = el.innerText || el.textContent || '';
-      const clean = text.replace(/\s+/g, ' ').trim();
-      if (clean && clean.length > 1) {
-        const endsWithPunct = /[.!?:\u0DF4\u0D83]$/.test(clean);
-        blocks.push(endsWithPunct ? clean : clean + '.');
+      const cleaned = cleanTextForSpeech(text, currentLang);
+      if (cleaned && cleaned.length > 1) {
+        const endsWithPunct = /[.!?:\u0DF4\u0D83]$/.test(cleaned);
+        blocks.push(endsWithPunct ? cleaned : cleaned + '.');
       }
     });
   } else {
     const rawText = clone.innerText || clone.textContent || '';
     rawText.split('\n').forEach(line => {
-      const clean = line.replace(/\s+/g, ' ').trim();
-      if (clean) blocks.push(clean);
+      const cleaned = cleanTextForSpeech(line, currentLang);
+      if (cleaned) blocks.push(cleaned);
     });
   }
 
-  // Deduplicate adjacent identical lines
+  // Deduplicate adjacent identical sentences
   const uniqueBlocks = [];
   blocks.forEach(b => {
     if (!uniqueBlocks.length || uniqueBlocks[uniqueBlocks.length - 1] !== b) {
@@ -2117,6 +2165,7 @@ function chunkText(text) {
 // Audio player references
 let currentSpeechAudio = null;
 let nextSpeechAudio = null;
+let speechPauseTimeout = null;
 
 // Stream authentic native audio chunks (Sinhala, Tamil, English)
 function playAudioQueue(chunks, lang, sessionToken) {
@@ -2132,7 +2181,7 @@ function playAudioQueue(chunks, lang, sessionToken) {
       try {
         nextSpeechAudio = new Audio(getAudioUrl(chunks[nextIdx]));
         nextSpeechAudio.preload = 'auto';
-      } catch(e) {
+      } catch (e) {
         nextSpeechAudio = null;
       }
     } else {
@@ -2154,7 +2203,7 @@ function playAudioQueue(chunks, lang, sessionToken) {
       try {
         currentSpeechAudio.pause();
         currentSpeechAudio.src = '';
-      } catch(e) {}
+      } catch (e) { }
     }
 
     if (nextSpeechAudio && idx > 0) {
@@ -2163,13 +2212,18 @@ function playAudioQueue(chunks, lang, sessionToken) {
       currentSpeechAudio = new Audio(getAudioUrl(text));
     }
 
-    // Preload following chunk immediately for zero latency
+    // Preload following chunk immediately for zero buffering lag
     preloadNext(idx + 1);
 
     currentSpeechAudio.onended = () => {
       if (sessionToken !== speechSessionToken) return;
       idx++;
-      playCurrentChunk();
+      // Add natural 200ms human narrator pause between sentences for calm elegance
+      speechPauseTimeout = setTimeout(() => {
+        if (sessionToken === speechSessionToken && isSpeaking) {
+          playCurrentChunk();
+        }
+      }, 200);
     };
 
     currentSpeechAudio.onerror = (e) => {
@@ -2278,24 +2332,28 @@ function readSection(sectionId) {
 // Stop speech and reset state
 function stopSpeech() {
   speechSessionToken++;
+  if (speechPauseTimeout) {
+    clearTimeout(speechPauseTimeout);
+    speechPauseTimeout = null;
+  }
   if (currentSpeechAudio) {
     try {
       currentSpeechAudio.pause();
       currentSpeechAudio.currentTime = 0;
       currentSpeechAudio.src = '';
-    } catch(e) {}
+    } catch (e) { }
     currentSpeechAudio = null;
   }
   if (nextSpeechAudio) {
     try {
       nextSpeechAudio.src = '';
-    } catch(e) {}
+    } catch (e) { }
     nextSpeechAudio = null;
   }
   if ('speechSynthesis' in window) {
     try {
       window.speechSynthesis.cancel();
-    } catch(e) {}
+    } catch (e) { }
   }
   if (activeSpeechSectionId) {
     updateSectionReadButtonState(activeSpeechSectionId, false);
