@@ -14,7 +14,6 @@ const PRECACHE_ASSETS = [
   './manifest.json',
   './assets/images/facon.jpg',
   './assets/images/cursor.png',
-  './assets/images/qr-code.png',
   './assets/images/img01-chankamana-aerial.jpg',
   './assets/images/img02-patana-aerial.jpg',
   './assets/images/img03-stone-stairway.jpg',
