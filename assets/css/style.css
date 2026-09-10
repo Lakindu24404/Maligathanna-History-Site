@@ -2816,11 +2816,18 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1.68;
 }
 
+.note-credits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
 .note-author-credit {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 0;
   padding: 6px 14px;
   background: rgba(63, 107, 85, 0.08);
   border: 1px solid rgba(63, 107, 85, 0.22);

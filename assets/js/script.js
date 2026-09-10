@@ -309,7 +309,7 @@ const translations = {
     gcap_15: 'වන වියන යට පිහිටි ගල් පියගැට',
     gcap_16: 'ගල් උළුවහු ප්‍රවේශ දොරටුව',
     gcap_17: 'පුරාණ ශිලා උළුවස්ස',
-    gallery_credit: 'ඡායාරූපකරණය: <strong>කුසල් ජනිත්</strong> (ඉතිහාස අධ්‍යයන අංශය, කුරුණෑගල)',
+    gallery_credit: 'ඡායාරූප ශිල්පී: <strong>අර්ජුන සමරවීර</strong> (පුරාවිද්‍යා දෙපාර්තමේන්තුව)',
 
     /* Preservation */
     pres_tag: 'සංරක්ෂණය සහ නඩත්තුව',
@@ -338,7 +338,8 @@ const translations = {
     /* Note */
     note_title: 'ඓතිහාසික නිරවද්‍යතා සටහන',
     note_desc: 'මෙම වෙබ් අඩවිය පුරාවිද්‍යාත්මක ලේඛනගත කිරීම් මත පදනම්ව තොරතුරු ඉදිරිපත් කරයි. පුරාවිද්‍යාත්මක සාක්ෂි සහ දේශීය ජනශ්‍රැති අතර වෙනස්කම් ඇති තැන්වල ඒවා පැහැදිලිව වෙන්කර දක්වා ඇත. ලිඛිත සාක්ෂි නොමැතිකම නිසා ස්ථානයේ ඉතිහාසය ප්‍රධාන වශයෙන් භෞතික නටබුන් සහ ගෘහ නිර්මාණ ලක්ෂණ ඔස්සේ අර්ථකථනය කෙරේ.',
-    content_credit: 'අන්තර්ගත සම්පාදනය: <strong>චතුරිකා මැදගේ</strong> (ඉතිහාස අධ්‍යයන අංශය, කුරුණෑගල)',
+    content_credit: 'අන්තර්ගතය සකස් කළේ: <strong>ඩී. ඩබ්ලිව්. නෙළුම් චතුරිකා රුක්මාලි</strong> (භාර නිලධාරිනී, මාලිගාතැන්න සහ මගොල්ල පුරාවිද්‍යා ස්ථානය)',
+    photographer_credit: 'ඡායාරූප ශිල්පී: <strong>අර්ජුන සමරවීර</strong> (පුරාවිද්‍යා දෙපාර්තමේන්තුව)',
 
     /* Offline Experience */
     offline_badge: 'සම්බන්ධතා තත්ත්වය',
@@ -651,7 +652,7 @@ const translations = {
     gcap_15: 'Steps under Tree Canopy',
     gcap_16: 'Stone Gateway Entrance',
     gcap_17: 'Stone Doorframe',
-    gallery_credit: 'Photography: <strong>Kusal Janith</strong> (History Department, Kurunegala)',
+    gallery_credit: 'Photographer: <strong>Arjuna Samaraweera</strong> (Department of Archaeology)',
 
     /* Preservation */
     pres_tag: 'Heritage Stewardship',
@@ -680,7 +681,8 @@ const translations = {
     /* Note */
     note_title: 'Historical Accuracy Note',
     note_desc: 'This website presents information based on archaeological documentation. Where archaeological evidence and local tradition differ, they are clearly presented separately. Local traditions are labelled as such and are not presented as historically confirmed facts. The absence of written records at this site means interpretation relies primarily on architectural and material evidence.',
-    content_credit: 'Content Written by: <strong>Chathurika Madage</strong> (History Department, Kurunegala)',
+    content_credit: 'Content prepared by: <strong>D. W. Nelum Chathurika Rukmali</strong> (Officer-in-Charge, Maligathanna and Magolla Archaeological Sites)',
+    photographer_credit: 'Photographer: <strong>Arjuna Samaraweera</strong> (Department of Archaeology)',
 
     /* Offline Experience */
     offline_badge: 'CONNECTION STATUS',
@@ -993,7 +995,7 @@ const translations = {
     gcap_15: 'மர நிழலின் கீழ் படிகள்',
     gcap_16: 'கல் நுழைவாயில் நுழைவு',
     gcap_17: 'கல் வாயில் சட்டகம்',
-    gallery_credit: 'புகைப்படம்: <strong>குசல் ஜனித்</strong> (வரலாற்றுத் துறை, குருணாகல்)',
+    gallery_credit: 'புகைப்படக் கலைஞர்: <strong>அர்ஜுன சமரவீர</strong> (தொல்லியல் திணைக்களம்)',
 
     /* Preservation */
     pres_tag: 'பாரம்பரிய பாதுகாப்பு',
@@ -1022,7 +1024,8 @@ const translations = {
     /* Note */
     note_title: 'வரலாற்று துல்லியம் குறிப்பு',
     note_desc: 'இந்த வலைத்தளம் தொல்பொருளியல் ஆவணங்களின் அடிப்படையில் தகவல்களை வழங்குகிறது. தொல்பொருளியல் சாட்சியங்களும் உள்ளூர் மரபும் வேறுபடும் இடத்தில், அவை தெளிவாக தனித்தனியாக வழங்கப்படுகின்றன.',
-    content_credit: 'உள்ளடக்க ஆக்கம்: <strong>சதுரிகா மதகே</strong> (வரலாற்றுத் துறை, குருணாகல்)',
+    content_credit: 'உள்ளடக்கத்தைத் தயாரித்தவர்: <strong>டி. டபிள்யூ. நெலும் சதுரிகா ருக்மலி</strong> (பொறுப்பு அதிகாரி, அரண்மனை மற்றும் மகொல்லா தொல்லியல் தளம்)',
+    photographer_credit: 'புகைப்படக் கலைஞர்: <strong>அர்ஜுன சமரவீர</strong> (தொல்லியல் திணைக்களம்)',
 
     /* Offline Experience */
     offline_badge: 'இணைப்பு நிலை',
