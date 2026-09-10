@@ -3,17 +3,18 @@
    sw.js — Service Worker for Full Offline & PWA Caching
    ============================================================ */
 
-const CACHE_NAME = 'maligathanna-v1.1';
+const CACHE_NAME = 'maligathanna-v1.2';
 
 // Core essential assets to precache immediately on install
 const PRECACHE_ASSETS = [
   './',
   './index.html',
-  './style.css',
-  './script.js',
+  './assets/css/style.css',
+  './assets/js/script.js',
   './manifest.json',
   './assets/images/facon.jpg',
   './assets/images/cursor.png',
+  './assets/images/qr-code.png',
   './assets/images/img01-chankamana-aerial.jpg',
   './assets/images/img02-patana-aerial.jpg',
   './assets/images/img03-stone-stairway.jpg',

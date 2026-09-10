@@ -338,6 +338,7 @@ const translations = {
     /* Note */
     note_title: 'ඓතිහාසික නිරවද්‍යතා සටහන',
     note_desc: 'මෙම වෙබ් අඩවිය පුරාවිද්‍යාත්මක ලේඛනගත කිරීම් මත පදනම්ව තොරතුරු ඉදිරිපත් කරයි. පුරාවිද්‍යාත්මක සාක්ෂි සහ දේශීය ජනශ්‍රැති අතර වෙනස්කම් ඇති තැන්වල ඒවා පැහැදිලිව වෙන්කර දක්වා ඇත. ලිඛිත සාක්ෂි නොමැතිකම නිසා ස්ථානයේ ඉතිහාසය ප්‍රධාන වශයෙන් භෞතික නටබුන් සහ ගෘහ නිර්මාණ ලක්ෂණ ඔස්සේ අර්ථකථනය කෙරේ.',
+    content_credit: 'අන්තර්ගත සම්පාදනය: <strong>චතුරිකා මැදගේ</strong> (ඉතිහාස අධ්‍යයන අංශය, කුරුණෑගල)',
 
     /* Offline Experience */
     offline_badge: 'සම්බන්ධතා තත්ත්වය',
@@ -679,6 +680,7 @@ const translations = {
     /* Note */
     note_title: 'Historical Accuracy Note',
     note_desc: 'This website presents information based on archaeological documentation. Where archaeological evidence and local tradition differ, they are clearly presented separately. Local traditions are labelled as such and are not presented as historically confirmed facts. The absence of written records at this site means interpretation relies primarily on architectural and material evidence.',
+    content_credit: 'Content Written by: <strong>Chathurika Madage</strong> (History Department, Kurunegala)',
 
     /* Offline Experience */
     offline_badge: 'CONNECTION STATUS',
@@ -1020,6 +1022,7 @@ const translations = {
     /* Note */
     note_title: 'வரலாற்று துல்லியம் குறிப்பு',
     note_desc: 'இந்த வலைத்தளம் தொல்பொருளியல் ஆவணங்களின் அடிப்படையில் தகவல்களை வழங்குகிறது. தொல்பொருளியல் சாட்சியங்களும் உள்ளூர் மரபும் வேறுபடும் இடத்தில், அவை தெளிவாக தனித்தனியாக வழங்கப்படுகின்றன.',
+    content_credit: 'உள்ளடக்க ஆக்கம்: <strong>சதுரிகா மதகே</strong> (வரலாற்றுத் துறை, குருணாகல்)',
 
     /* Offline Experience */
     offline_badge: 'இணைப்பு நிலை',

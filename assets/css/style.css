@@ -2816,6 +2816,46 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   line-height: 1.68;
 }
 
+.note-author-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 6px 14px;
+  background: rgba(63, 107, 85, 0.08);
+  border: 1px solid rgba(63, 107, 85, 0.22);
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  color: var(--clr-accent);
+  transition: var(--transition);
+}
+
+.note-author-credit:hover {
+  background: rgba(63, 107, 85, 0.14);
+  border-color: rgba(63, 107, 85, 0.35);
+  transform: translateY(-1px);
+}
+
+.note-author-credit i {
+  color: var(--clr-accent);
+  font-size: 0.85rem;
+}
+
+.note-author-credit strong {
+  color: var(--clr-primary-dark);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .note-author-credit {
+  background: rgba(90, 144, 112, 0.12);
+  border-color: rgba(90, 144, 112, 0.28);
+  color: var(--clr-accent-light);
+}
+
+[data-theme="dark"] .note-author-credit strong {
+  color: #F0EBE0;
+}
+
 /* ===================================================================
    FOOTER — professional, clean
    =================================================================== */
@@ -2951,6 +2991,11 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   opacity: 0.75;
 }
 
+.footer-info p.footer-author-info strong {
+  color: var(--clr-secondary-light);
+  font-weight: 600;
+}
+
 .footer-bottom {
   padding: 14px 0 18px;
 }
@@ -2960,13 +3005,40 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-copy {
   font-size: 0.75rem;
   color: rgba(255,255,255,0.38);
   margin: 0;
+}
+
+.footer-credits-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Content author credit */
+.footer-author-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  color: rgba(255,255,255,0.52);
+}
+
+.footer-author-credit i {
+  color: var(--clr-secondary);
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+.footer-author-credit strong {
+  color: var(--clr-secondary-light);
+  font-weight: 600;
 }
 
 /* Dev credit — clean text, no pill */
@@ -3263,6 +3335,7 @@ img { max-width: 100%; height: auto; display: block; }
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
   .footer-brand { grid-column: 1; }
   .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .footer-credits-group { flex-direction: column; align-items: flex-start; gap: 6px; }
   .footer-links { grid-template-columns: repeat(2, 1fr); }
 
   /* Lightbox */
