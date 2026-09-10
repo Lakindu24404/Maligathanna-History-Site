@@ -307,6 +307,7 @@ const translations = {
     gcap_15: 'වන වියන යට පිහිටි ගල් පියගැට',
     gcap_16: 'ගල් උළුවහු ප්‍රවේශ දොරටුව',
     gcap_17: 'පුරාණ ශිලා උළුවස්ස',
+    gallery_credit: 'ඡායාරූපකරණය: <strong>කුසල් ජනිත්</strong> (ඉතිහාස අධ්‍යයන අංශය, කුරුණෑගල)',
 
     /* Preservation */
     pres_tag: 'සංරක්ෂණය සහ නඩත්තුව',
@@ -635,6 +636,7 @@ const translations = {
     gcap_15: 'Steps under Tree Canopy',
     gcap_16: 'Stone Gateway Entrance',
     gcap_17: 'Stone Doorframe',
+    gallery_credit: 'Photography: <strong>Kusal Janith</strong> (History Department, Kurunegala)',
 
     /* Preservation */
     pres_tag: 'Heritage Stewardship',
@@ -963,6 +965,7 @@ const translations = {
     gcap_15: 'மர நிழலின் கீழ் படிகள்',
     gcap_16: 'கல் நுழைவாயில் நுழைவு',
     gcap_17: 'கல் வாயில் சட்டகம்',
+    gallery_credit: 'புகைப்படம்: <strong>குசல் ஜனித்</strong> (வரலாற்றுத் துறை, குருணாகல்)',
 
     /* Preservation */
     pres_tag: 'பாரம்பரிய பாதுகாப்பு',
