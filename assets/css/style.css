@@ -98,7 +98,7 @@ body {
   line-height: 1.75;
   overflow-x: hidden;
   transition: background-color 0.4s ease, color 0.4s ease;
-  cursor: url("/assets/images/cursor.png"), auto;
+  cursor: url("assets/images/cursor.png"), auto;
 }
 
 /* Language-specific font overrides */
