@@ -3,7 +3,7 @@
    sw.js — Service Worker for Full Offline & PWA Caching
    ============================================================ */
 
-const CACHE_NAME = 'maligathanna-v1.2';
+const CACHE_NAME = 'maligathanna-v1.3';
 
 // Core essential assets to precache immediately on install
 const PRECACHE_ASSETS = [
@@ -13,7 +13,6 @@ const PRECACHE_ASSETS = [
   './assets/js/script.js',
   './manifest.json',
   './assets/images/facon.jpg',
-  './assets/images/cursor.png',
   './assets/images/img01-chankamana-aerial.jpg',
   './assets/images/img02-patana-aerial.jpg',
   './assets/images/img03-stone-stairway.jpg',
@@ -31,6 +30,12 @@ const PRECACHE_ASSETS = [
   './assets/images/img15-steps-under-tree.jpg',
   './assets/images/img16-gateway-entrance.jpg',
   './assets/images/img17-stone-doorframe.jpg',
+  './assets/images/img18-stone-bridge-moat.jpg',
+  './assets/images/img19-entrance-gateway-front.jpg',
+  './assets/images/img20-inner-courtyard-moonstone.jpg',
+  './assets/images/img21-platform-retaining-wall.jpg',
+  './assets/images/img22-upper-terrace-pillar-bases.jpg',
+  './assets/images/img23-stone-doorway-facade.jpg',
   './assets/images/nearby-arankele.jpg',
   './assets/images/nearby-athugala.jpg',
   './assets/images/nearby-haththikuchchi.jpg',
